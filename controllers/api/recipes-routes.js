@@ -2,7 +2,7 @@ const router = require("express").Router();
 const fs = require('fs');
 const path = require('path');
 //const uniqid = require('uniqid');
-const { recipes } = require("../db/db.json");
+const { recipes } = require("../../db/db.json");
 
 
 // api/recipes/?search_query=burgers
