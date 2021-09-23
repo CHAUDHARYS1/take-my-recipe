@@ -45,7 +45,7 @@ module.exports = router;
 const router = require('express').Router();
 
 router.get('/', (req, res) => {
-  res.render('homepage');
+  res.render('index');
 });
 
 module.exports = router;
