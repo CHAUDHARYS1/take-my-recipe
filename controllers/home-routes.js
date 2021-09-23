@@ -1,24 +1,24 @@
+/*
 const router = require('express').Router();
-const { Op } = require('sequelize');
+const sequelize = require('../config/connection');
 const { Recipe, User, Comment } = require('../models');
 
-/* Home page route */
+Home page route 
 
 router.get('/', (req, res) => {
     console.log(req.session)
     Recipe.findAll({
         where: {
           id: {
-            [Op.between]: [1,6]
+            [sequelize.between]: [1,6]
           }
         },
         attributes: [
             'id',
             'title',
-            'ingredients',
-            'recipe_steps',
+            'description',         
             'category',
-            'image_url'
+            'ingredients'
         ],
         order: [['created_at', 'DESC']], 
         include: [
@@ -30,7 +30,7 @@ router.get('/', (req, res) => {
     })
         .then(dbPostData => {
           const recipes = dbPostData.map(recipe => recipe.get({ plain: true }));
-          res.render('homepage', {
+          res.render('index', {
             recipes,
             loggedIn: req.session.loggedIn
           });
@@ -39,4 +39,13 @@ router.get('/', (req, res) => {
           console.log(err);
           res.status(500).json(err);
         });
+}); 
+module.exports = router;
+*/
+const router = require('express').Router();
+
+router.get('/', (req, res) => {
+  res.render('homepage');
 });
+
+module.exports = router;
