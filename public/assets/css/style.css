@@ -1,0 +1,18 @@
+* {
+    padding: 0;
+    margin: 0;
+  }
+  p, a{
+    font-size: 14px;
+  }
+  
+  a{
+    color: black!important;
+  }
+  .middle {
+    vertical-align: middle;
+  }
+ 
+  .footer-content{
+    padding: 15px; 
+  }
