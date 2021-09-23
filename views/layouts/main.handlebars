@@ -1,9 +1,66 @@
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Receipes</title>
-  </head>
-  <body>
-    {{{body}}}
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Receipes</title>
+</head>
+
+<body>
+  <h1>Hi!</h1>
+  <!-- Header -->
+  <header>
+    <nav class="uk-navbar-container uk-margin" uk-navbar>
+      <div class="uk-navbar-left">
+        <div class="uk-align-left">
+          <img src="/public/assets/images/logo.png" class="middle" alt="Take My Recipe" />
+        </div>
+      </div>
+      <div class="uk-navbar-right">
+        <div>
+          <a class="uk-navbar-toggle" uk-search-icon href="#"></a>
+          <div class="uk-drop" uk-drop="mode: click; pos: left-center; offset: 0">
+            <form class="uk-search uk-search-navbar uk-width-1-1">
+              <input class="uk-search-input" type="search" placeholder="Search Receipe" autofocus>
+            </form>
+          </div>
+        </div>
+        <div>
+          <ul class="uk-navbar-nav uk-navbar-right">
+            <li class="uk-active"><a href="#">Log In</a></li>
+            <span uk-icon="icon: sign-in; ratio: 1"></span>
+            <li><a href="#">Sign Up</a></li>
+            <span uk-icon="icon: user; ratio: 1"></span>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="uk-align-center">
+      <img src="./assets/images/ohkrpy3uRjKibySVLgYn_5_Tastes.png" class="uk-align-center" width="1200px" height="400px"
+        alt="" uk-img>
+    </div>
+  </header>
+
+ {{{body}}}
+
+  <!-- Footer -->
+    <footer class="uk-container">
+        <div class="uk-flex">
+            <div class="uk-margin-left footer-content">
+                <p>Built with love by the <span
+                        uk-tooltip="Connor Werth, Jaya Gudipalli, Mehak Rizvi, Shital Chaudhary"><u>team</u></span> |
+                    2021</p>
+            </div>
+            <div class="uk-margin-left footer-content">
+                <p><a href="https://github.com/CHAUDHARYS1/book-lovers" target="_blank"></span><u>See code in
+                            GitHub</u></a> <span uk-icon="github"></span></p>
+            </div>
+            <div class="uk-margin-left footer-content">
+                <p>Take My Recipe Web App <span uk-icon="happy"></span></p> </span>
+            </div>
+        </div>
+    </footer>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/uikit@3.7.1/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.7.1/dist/js/uikit-icons.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </html>
