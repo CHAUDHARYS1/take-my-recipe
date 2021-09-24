@@ -1,17 +1,8 @@
-const router = require("express").Router();
-<<<<<<< HEAD:controllers/recipes-routes.js
-const { Recipes } = require('../model');
-=======
-const fs = require('fs');
-const path = require('path');
-//const uniqid = require('uniqid');
-const { recipes } = require("../../db/db.json");
-
->>>>>>> a57ae2f703c3713bda675cb4ba89f902849fa377:controllers/api/recipes-routes.js
-
 // api/recipes/?search_query=burgers
 // api/recipes/?id=23456543
 // api/recipes/?category=lunch
+const { Recipes } = require('../../model');
+const router = require("express").Router();
 
 router.get("/", (req,res,next) => {
   res.render('main');
