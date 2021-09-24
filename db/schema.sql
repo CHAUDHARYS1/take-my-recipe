@@ -1,3 +1,4 @@
-DROP DATABASE IF EXISTS take_my_recipe_db;
+DROP DATABASE IF EXISTS takemyrecipe_db;
+CREATE DATABASE takemyrecipe_db;
 
-CREATE DATABASE take_my_recipe_db;
+USE  takemyrecipe_db;
