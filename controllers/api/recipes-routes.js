@@ -1,56 +1,37 @@
-// api/recipes/?search_query=burgers
-// api/recipes/?id=23456543
-// api/recipes/?category=lunch
-const { Recipes } = require('../../model');
 const router = require("express").Router();
+const { Recipe, User, Comment } = require("../../models");
 
-router.get("/", (req,res,next) => {
-  res.render('main');
-})
-
-router.get("/recipes/", (req,res) => {
-
-  Recipes.findAll()
-    .then(dbUserData => res.json(dbUserData))
-    .catch(err => {
+router.get("/", (req, res) => {
+  console.log(req.session);
+  console.log("recipe route called");
+  Recipe.findAll({
+    attributes: ["id", "title", "description", "category", "imageUrl", "ingredients"],
+  })
+    .then((dbRecipeData) => {
+      res.json(dbRecipeData);
+    })
+    .catch((err) => {
       console.log(err);
       res.status(500).json(err);
     });
-  
-})
+});
 
-// GET /api/users/1
-router.get('/recipes/:id', (req, res) => {
-  Recipes.findOne({
+//get one recipe
+router.get('/getRecipe/:id', (req, res) => {
+  console.log("params id", req.params.id)
+  Recipe.findOne({   
     where: {
       id: req.params.id
-    }
+    },
+    attributes: [ "id", "title", "imageUrl", "description", "category", "ingredients"],
   })
-    .then(dbUserData => {
-      if (!dbUserData) {
-        res.status(404).json({ message: 'No user found with this id' });
+    .then(singleReceipe => {
+      console.log("single recipe ", singleReceipe)
+      if (!singleReceipe) {
+        res.status(404).json({ message: 'No post found with this id' });
         return;
       }
-      res.json(dbUserData);
-    })
-    .catch(err => {
-      console.log(err);
-      res.status(500).json(err);
-    });
-});
-//Recipes by category
-router.get('/recipes/:category/:name', (req, res) => {
-  Recipes.findAll({
-    where: {
-      category: req.params.name
-    }
-  })
-    .then(dbUserData => {
-      if (!dbUserData) {
-        res.status(404).json({ message: 'No user found with this id' });
-        return;
-      }
-      res.json(dbUserData);
+      res.json(singleReceipe);
     })
     .catch(err => {
       console.log(err);
@@ -58,29 +39,60 @@ router.get('/recipes/:category/:name', (req, res) => {
     });
 });
 
+// get all recipes by category
+router.get('/:category', (req, res) => {
+  Recipe.findAll({
+      where: {
+        category: req.params.category
+      },
+      attributes: ["id", "title", "description", "category", "imageUrl", "ingredients"],
+  })
+  .then(dbCategoryData => res.json(dbCategoryData))
+  .catch(err => {
+    console.log(err);
+    res.status(500).json(err);
+  });
+});
 
+//post a recipe
 
-//Create new recipes
-router.post('/recipes/', (req, res) => {
-
-  Recipes.create({
+router.post("/", (req, res) => {
+  Recipe.create({
     title: req.body.title,
+    ingredients: req.body.ingredients,
     description: req.body.description,
     category: req.body.category,
-    imageUrl: req.body.image_url,
-    instructions: req.body.instructions
+    instructions: req.body.instructions,
+    imageUrl: req.body.imageUrl,
   })
-    .then(dbUserData => res.json(dbUserData))
-    .catch(err => {
+    .then((dbPostData) => res.json(dbPostData))
+    .catch((err) => {
       console.log(err);
       res.status(500).json(err);
     });
 });
 
 
-
-function findRecipesBySearchQuery(query){
-
-}
+// update by id
+router.put('/update/:id',  (req, res) => {
+  Recipe.update(req.body,
+    {
+      where: {
+        id: req.params.id
+      }
+    }
+  )
+    .then(dbPostData => {
+      if (!dbPostData) {
+        res.status(404).json({ message: 'No recipe found with this id' });
+        return;
+      }
+      res.json(dbPostData);
+    })
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
 
 module.exports = router;

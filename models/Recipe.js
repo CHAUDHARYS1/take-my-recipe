@@ -15,11 +15,15 @@ Recipe.init(
         type: DataTypes.STRING,
         allowNull: false
       },
+      description: {
+        type: DataTypes.TEXT('long'),
+        allowNull: false
+      },
       ingredients: {
         type: DataTypes.TEXT('long'),
         allowNull: false
       },
-      recipe_steps: {
+      instructions: {
         type: DataTypes.TEXT('long'),
         allowNull: false
       },
@@ -27,20 +31,17 @@ Recipe.init(
         type: DataTypes.STRING,
         allowNull: false
       },
-      image_url: {
+      imageUrl: {
         type: DataTypes.STRING,
         allowNull: true,
-        validate: {
-            isURL: true
-      }
-      },
-      user_id: {
+       },
+     /* user_id: {
         type: DataTypes.INTEGER,
         references: {
           model: 'user',
           key: 'id'
         }
-      }
+      }*/
     },
     {
       sequelize,

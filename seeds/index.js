@@ -1,4 +1,4 @@
-
+const seedComments = require('./comment-seeds');
 const seedRecipe = require('./recipe-seeds');
 const seedUsers = require('./user-seeds');
 
@@ -14,6 +14,10 @@ const seedAll = async () => {
   await seedRecipe();
   console.log('--------------');
   
+  await seedComments();
+  console.log('--------------');
+
+
 
   process.exit(0);
 };

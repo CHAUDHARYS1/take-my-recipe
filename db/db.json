@@ -1,6 +1,5 @@
-const { Recipe } = require('../models');
 
-const recipedata = [
+  [
   {
     "title": "Chicken Grilled Sandwich ",
     "description": "Tomorrow at 11:30",
@@ -81,7 +80,7 @@ const recipedata = [
 
   },
   {
-    "title": "Pot stickers ",
+    "title": "Chicken Grilled Sandwich ",
     "description": "Tomorrow at 11:30",
     "id": "97xboo0ktkylpom",
     "imageUrl": "",
@@ -131,8 +130,4 @@ const recipedata = [
 
   }
   
-];
-
-const seedRecipe = () => Recipe.bulkCreate(recipedata);
-
-module.exports = seedRecipe;
+]
