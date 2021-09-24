@@ -5,6 +5,7 @@ const { Recipe, User, Comment } = require('../models');
 
 //Home page route 
 
+
 router.get('/', (req, res) => {
   console.log("home route called")
  /*   console.log(req.session)

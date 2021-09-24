@@ -81,7 +81,7 @@ const recipedata = [
 
   },
   {
-    "title": "Chicken Grilled Sandwich ",
+    "title": "Pot stickers ",
     "description": "Tomorrow at 11:30",
     "id": "97xboo0ktkylpom",
     "imageUrl": "",
