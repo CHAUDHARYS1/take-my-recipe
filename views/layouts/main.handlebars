@@ -14,33 +14,24 @@
     <header class="">
         <nav class="uk-container uk-navbar-container uk-margin" uk-navbar>
             <div class="uk-navbar-left">
-                <a class="uk-navbar-item uk-logo" href="#">
+                <a class="uk-navbar-item uk-logo" href="/">
                     <img src="/images/logo.png" class="uk-center" alt="Take My Recipe" />
                 </a>
-            </div>
-
-            <div class="uk-navbar-right">
-                <div>
-                    <a href="#">Login</a>
-                    <a href="#">Signup</a>
-                </div>
-            </div>
-        </nav>
-    </header>
-
-    <!-- Search bar -->
-    <div class="uk-container">
-        <div class=" uk-margin">
-            <div class="uk-position-top-left uk-position-relative">
                 <form class="uk-search uk-search-default">
                     <span uk-search-icon></span>
                     <input class="uk-search-input" type="search" placeholder="Search">
                 </form>
             </div>
-        </div>
-    </div>
 
-
+            <!-- Search bar -->
+            <div class="uk-navbar-right">
+                
+                <div>
+                    <a href="/login">Login/Signup</a>
+                </div>
+            </div>
+        </nav>
+    </header>
     <main class="uk-container">
         {{{ body }}}
     </main>
