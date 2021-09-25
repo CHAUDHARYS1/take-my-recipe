@@ -2,27 +2,72 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Take My Receipe</title>
-  <link rel="stylesheet" href="/stylesheets/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Take My Receipe</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.7.1/dist/css/uikit.min.css" />
+
 </head>
 
 <body>
-  <div class="wrapper">
-    <header>
-      <h1>
-        <a href="/">Take My Receipe</a>
-      </h1>
-    </header>
-    <main>
-      {{{ body }}}
-    </main>
-    <footer>
-      Thanks for visiting!
-    </footer>
-  </div>
+    <header class="">
+        <nav class="uk-container uk-navbar-container uk-margin" uk-navbar>
+            <div class="uk-navbar-left">
+                <a class="uk-navbar-item uk-logo" href="#">
+                    <img src="/images/logo.png" class="uk-center" alt="Take My Recipe" />
+                </a>
+            </div>
 
+            <div class="uk-navbar-right">
+                <div>
+                    <a href="#">Login</a>
+                    <a href="#">Signup</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Search bar -->
+    <div class="uk-container">
+        <div class=" uk-margin">
+            <div class="uk-position-top-left uk-position-relative">
+                <form class="uk-search uk-search-default">
+                    <span uk-search-icon></span>
+                    <input class="uk-search-input" type="search" placeholder="Search">
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <main class="uk-container">
+        {{{ body }}}
+    </main>
+
+    <!-- Footer -->
+    {{!-- <footer class="uk-container">
+        <div class="uk-flex">
+            <div class="uk-margin-left footer-content">
+                <p>Built with love by the <span
+                        uk-tooltip="Connor Werth, Jaya Gudipalli, Mehak Rizvi, Shital Chaudhary"><u>team</u></span> |
+                    2021</p>
+            </div>
+            <div class="uk-margin-left footer-content">
+                <p><a href="https://github.com/CHAUDHARYS1/take-my-recipe" target="_blank"></span><u>See code in
+                            GitHub</u></a> <span uk-icon="github"></span></p>
+            </div>
+            <div class="uk-margin-left footer-content">
+                <p>Take My Recipe Web App <span uk-icon="happy"></span></p> </span>
+            </div>
+        </div>
+    </footer> --}}
+    <!-- UIkit CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.7.4/dist/css/uikit.min.css" />
+
+    <!-- UIkit JS -->
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.7.4/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.7.4/dist/js/uikit-icons.min.js"></script>
 </body>
 
 </html>
