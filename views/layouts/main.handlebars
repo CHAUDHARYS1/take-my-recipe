@@ -11,33 +11,35 @@
 </head>
 
 <body>
-    <header class="">
-        <nav class="uk-container uk-navbar-container uk-margin" uk-navbar>
-            <div class="uk-navbar-left">
-                <a class="uk-navbar-item uk-logo" href="/">
-                    <img src="/images/logo.png" class="uk-center" alt="Take My Recipe" />
-                </a>
-                <form class="uk-search uk-search-default">
-                    <span uk-search-icon></span>
-                    <input class="uk-search-input" type="search" placeholder="Search">
-                </form>
-            </div>
-
+    <nav class="uk-navbar-container uk-margin uk-navbar-transparent" uk-navbar>
+        <!-- Navigation on the left side -->
+        <div class="uk-navbar-left">
+            <!-- Logo/Home button -->
+            <a class="uk-navbar-item uk-logo" href="/">
+                <img src="/images/logo.png" class="uk-center" alt="Take My Recipe logo" />
+            </a>
             <!-- Search bar -->
-            <div class="uk-navbar-right">
-                
-                <div>
-                    <a href="/login">Login/Signup</a>
-                </div>
+            <form class="uk-search uk-search-default">
+                <span uk-search-icon></span>
+                <input class="uk-search-input" type="search" placeholder="Search">
+            </form>
+        </div>
+
+        <!-- Navigation on the right side -->
+        <div class="uk-navbar-right">
+            <!-- Login/Signup page -->
+            <div class="uk-padding-small">
+                <a href="/login">Login/Signup</a>
             </div>
-        </nav>
-    </header>
+        </div>
+    </nav>
+
     <main class="uk-container">
         {{{ body }}}
     </main>
 
     <!-- Footer -->
-    {{!-- <footer class="uk-container">
+    <footer class="uk-container uk-position-bottom-center">
         <div class="uk-flex">
             <div class="uk-margin-left footer-content">
                 <p>Built with love by the <span
@@ -52,7 +54,7 @@
                 <p>Take My Recipe Web App <span uk-icon="happy"></span></p> </span>
             </div>
         </div>
-    </footer> --}}
+    </footer>
     <!-- UIkit CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.7.4/dist/css/uikit.min.css" />
 
