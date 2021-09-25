@@ -1,0 +1,112 @@
+<div class="uk-flex uk-flex-center">
+    <div class="uk-card uk-card-default uk-card-body">
+        <h3 class="uk-card-title">Add Your Recipe Below</h3>
+        <h4 class="uk-card-body">Add your recipe for others to try out!</h4>
+        <input class="uk-card-body uk-input uk-form-width-large" type="text"
+            placeholder="Input Recipe Title Here"></input>
+        <div class="uk-margin">
+            <label class="uk-form-label" for="form-stacked-select">Meal Type</label>
+            <div class="uk-form-controls">
+                <select class="uk-select" id="form-stacked-select">
+                    <option>Breakfast</option>
+                    <option>Lunch</option>
+                    <option>Dinner</option>
+                </select>
+            </div>
+        </div>
+        <div class="uk-margin">
+            <textarea class="uk-textarea" rows="5" placeholder="Please Provide a breif description of your recipe"></textarea>
+        </div>
+        <h4 class="uk-card-body">Add ingredients</h4>
+        <div id="dynamicCheck">
+            <input class="uk-button uk-button-default" type="button" value="+ Add Ingredient"
+                onclick="createNewElement();" />
+        </div>
+        <div id="newElementId">Ingreditents:</div>
+        <div class="js-upload uk-placeholder uk-text-center">
+            <span uk-icon="icon: cloud-upload"></span>
+            <span class="uk-text-middle">Attach binaries by dropping them here or</span>
+            <div uk-form-custom>
+                <input type="file" multiple>
+                <span class="uk-link">selecting one</span>
+            </div>
+        </div>
+
+        <progress id="js-progressbar" class="uk-progress" value="0" max="100" hidden></progress>
+
+        <script>
+
+            var bar = document.getElementById('js-progressbar');
+
+            UIkit.upload('.js-upload', {
+
+                url: '',
+                multiple: true,
+
+                beforeSend: function () {
+                    console.log('beforeSend', arguments);
+                },
+                beforeAll: function () {
+                    console.log('beforeAll', arguments);
+                },
+                load: function () {
+                    console.log('load', arguments);
+                },
+                error: function () {
+                    console.log('error', arguments);
+                },
+                complete: function () {
+                    console.log('complete', arguments);
+                },
+
+                loadStart: function (e) {
+                    console.log('loadStart', arguments);
+
+                    bar.removeAttribute('hidden');
+                    bar.max = e.total;
+                    bar.value = e.loaded;
+                },
+
+                progress: function (e) {
+                    console.log('progress', arguments);
+
+                    bar.max = e.total;
+                    bar.value = e.loaded;
+                },
+
+                loadEnd: function (e) {
+                    console.log('loadEnd', arguments);
+
+                    bar.max = e.total;
+                    bar.value = e.loaded;
+                },
+
+                completeAll: function () {
+                    console.log('completeAll', arguments);
+
+                    setTimeout(function () {
+                        bar.setAttribute('hidden', 'hidden');
+                    }, 1000);
+
+                    alert('Upload Completed');
+                }
+
+            });
+
+        </script>
+
+    </div>
+</div>
+
+
+<script type="text/JavaScript">
+    function createNewElement() {
+        var txtNewInputBox = document.createElement('div');
+        txtNewInputBox.innerHTML = "<input type='text' class='uk-margin uk-card-body uk-input uk-form-width-large' placeholder='Your Ingredient' id='newInputBox'>";
+        document.getElementById("newElementId").appendChild(txtNewInputBox);
+    }
+    </script>
+<!-- UIkit JS -->
+<script src="https://cdn.jsdelivr.net/npm/uikit@3.7.4/dist/js/uikit.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/uikit@3.7.4/dist/js/uikit-icons.min.js"></script>
+</body>
