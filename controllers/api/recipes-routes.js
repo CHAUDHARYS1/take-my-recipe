@@ -1,6 +1,8 @@
 const router = require("express").Router();
+const withAuth = require('../../utils/auth');
 const { Recipe, User, Comment } = require("../../models");
 
+// get all recipes
 router.get("/", (req, res) => {
   console.log(req.session);
   console.log("recipe route called");
@@ -55,15 +57,10 @@ router.get('/:category', (req, res) => {
 });
 
 //post a recipe
-
-router.post("/", (req, res) => {
+router.post("/", withAuth, (req, res) => {
+  const body = req.body;
   Recipe.create({
-    title: req.body.title,
-    ingredients: req.body.ingredients,
-    description: req.body.description,
-    category: req.body.category,
-    instructions: req.body.instructions,
-    imageUrl: req.body.imageUrl,
+  ...body, userId: req.session.userId
   })
     .then((dbPostData) => res.json(dbPostData))
     .catch((err) => {
@@ -71,6 +68,17 @@ router.post("/", (req, res) => {
       res.status(500).json(err);
     });
 });
+
+
+ // title: req.body.title,
+    // ingredients: req.body.ingredients,
+    // description: req.body.description,
+    // category: req.body.category,
+    // instructions: req.body.instructions,
+    // imageUrl: req.body.imageUrl,
+
+
+
 
 
 // update by id

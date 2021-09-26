@@ -1,10 +1,10 @@
 * {
     padding: 0;
     margin: 0;
+
   }
-  p, a{
-    font-size: 14px;
-    font-family: Arial, Helvetica, sans-serif;
+  ul, ol, li, p, a, input {
+    font-size:12px!important;
   }
 
  
