@@ -7,7 +7,7 @@ router.get('/addRecipe', ( req, res) => {
         res.redirect('/');
         return;
     }
-    res.render('addRecipe');
+    res.render('createRecipe');
 })
 
 

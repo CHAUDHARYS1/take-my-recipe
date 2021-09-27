@@ -3,7 +3,7 @@
     margin: 0;
 
   }
-  ul, ol, li, p, a, input {
+  ul, ol, li, p, a, input, label, textarea, select, option {
     font-size:12px!important;
   }
 

@@ -1,0 +1,57 @@
+<div class="uk-flex uk-flex-center">
+    <div class="uk-card uk-card-body">
+        <h2>Add Your Recipe Below</h2>
+        <p>Add your recipe for others to try out!</p>
+        <!-- Recipe Name -->
+        <div class="uk-margin">
+            <label class="uk-form-label">Recipe Name:</label>
+            <input class="uk-input" type="text" placeholder=""></input>
+        </div>
+        <!-- Meal Type Drop Down -->
+        <div class="uk-margin">
+            <label class="uk-form-label" for="form-stacked-select">Meal Type</label>
+            <div class="uk-form-controls">
+                <select class="uk-select" id="form-stacked-select">
+                    <option>Select</option>
+                    <option value="0">Breakfast</option>
+                    <option value="1">Lunch</option>
+                    <option value="2">Dinner</option>
+                    <option value="3">Appetizers</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Add Description -->
+        <div class="uk-margin">
+            <label class="uk-form-label">Add Description</label>
+            <textarea class="uk-textarea" rows="5"
+                placeholder="Please add a breif description of your recipe"></textarea>
+        </div>
+
+        <!-- Add Ingredients -->
+        <div class="uk-margin">
+            <label class="uk-form-label">Add Ingredients</label>
+            <textarea class="uk-textarea" rows="5"
+                placeholder="Please add list of ingredients on your recipe"></textarea>
+        </div>
+
+        <!-- Upload a picture -->
+        <div class="uk-margin">
+            <label class="uk-form-label">Upload a picture</label>
+            <div class="js-upload uk-placeholder uk-text-center">
+                <span uk-icon="icon: cloud-upload"></span>
+                <span class="uk-text-middle">Attach binaries by dropping them here or</span>
+                <div uk-form-custom>
+                    <input type="file" multiple>
+                    <span class="uk-link">selecting one</span>
+                </div>
+            </div>
+        </div>
+        <progress id="js-progressbar" class="uk-progress" value="0" max="100" hidden></progress>
+
+        <div class="uk-margin uk-flex uk-flex-center">
+            <button class="uk-button uk-button-default" type="submit">Submit</button>
+        </div>
+    </div>
+</div>
+<script src="../public/javascript/createRecipeProgressBar.js"></script>
