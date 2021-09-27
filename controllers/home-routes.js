@@ -22,7 +22,7 @@ router.get('/', (req, res) => {
           const recipes = dbPostData.map(recipe => recipe.get({ plain: true }));
           console.log("recipes", recipes);
 
-          res.render('allRecipes', {            
+          res.render('index', {            
           recipes,
           loggedIn: req.session.loggedIn
           });

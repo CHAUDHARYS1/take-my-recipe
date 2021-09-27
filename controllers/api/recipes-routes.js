@@ -57,7 +57,7 @@ router.get('/:category', (req, res) => {
 });
 
 //post a recipe
-router.post("/", withAuth, (req, res) => {
+router.post("/", (req, res) => {
   const body = req.body;
   Recipe.create({
   ...body, userId: req.session.userId
@@ -69,17 +69,12 @@ router.post("/", withAuth, (req, res) => {
     });
 });
 
-
  // title: req.body.title,
     // ingredients: req.body.ingredients,
     // description: req.body.description,
     // category: req.body.category,
     // instructions: req.body.instructions,
     // imageUrl: req.body.imageUrl,
-
-
-
-
 
 // update by id
 router.put('/update/:id',  (req, res) => {

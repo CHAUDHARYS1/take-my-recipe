@@ -2,56 +2,71 @@
     <div class="uk-card uk-card-body">
         <h2>Add Your Recipe Below</h2>
         <p>Add your recipe for others to try out!</p>
-        <!-- Recipe Name -->
-        <div class="uk-margin">
-            <label class="uk-form-label">Recipe Name:</label>
-            <input class="uk-input" type="text" placeholder=""></input>
-        </div>
-        <!-- Meal Type Drop Down -->
-        <div class="uk-margin">
-            <label class="uk-form-label" for="form-stacked-select">Meal Type</label>
-            <div class="uk-form-controls">
-                <select class="uk-select" id="form-stacked-select">
-                    <option>Select</option>
-                    <option value="0">Breakfast</option>
-                    <option value="1">Lunch</option>
-                    <option value="2">Dinner</option>
-                    <option value="3">Appetizers</option>
-                </select>
+
+        <form class="add-recipe-form">
+            <!-- Recipe Name -->
+            <div class="uk-margin">
+                <label class="uk-form-label">Recipe Name:</label>
+                <input id="recipe-name" class="uk-input" type="text" placeholder=""></input>
             </div>
-        </div>
-
-        <!-- Add Description -->
-        <div class="uk-margin">
-            <label class="uk-form-label">Add Description</label>
-            <textarea class="uk-textarea" rows="5"
-                placeholder="Please add a breif description of your recipe"></textarea>
-        </div>
-
-        <!-- Add Ingredients -->
-        <div class="uk-margin">
-            <label class="uk-form-label">Add Ingredients</label>
-            <textarea class="uk-textarea" rows="5"
-                placeholder="Please add list of ingredients on your recipe"></textarea>
-        </div>
-
-        <!-- Upload a picture -->
-        <div class="uk-margin">
-            <label class="uk-form-label">Upload a picture</label>
-            <div class="js-upload uk-placeholder uk-text-center">
-                <span uk-icon="icon: cloud-upload"></span>
-                <span class="uk-text-middle">Attach binaries by dropping them here or</span>
-                <div uk-form-custom>
-                    <input type="file" multiple>
-                    <span class="uk-link">selecting one</span>
+            <!-- Meal Type Drop Down -->
+            <div class="uk-margin">
+                <label class="uk-form-label">Meal Type</label>
+                <div class="uk-form-controls">
+                    <select class="uk-select" id="form-stacked-select">
+                        <option>Select</option>
+                        <option value="Breakfast">Breakfast</option>
+                        <option value="Lunch">Lunch</option>
+                        <option value="Dinner">Dinner</option>
+                        <option value="Appetizer">Appetizers</option>
+                    </select>
                 </div>
             </div>
-        </div>
-        <progress id="js-progressbar" class="uk-progress" value="0" max="100" hidden></progress>
 
-        <div class="uk-margin uk-flex uk-flex-center">
-            <button class="uk-button uk-button-default" type="submit">Submit</button>
-        </div>
+            <!-- Add Description -->
+            <div class="uk-margin">
+                <label class="uk-form-label">Add Description</label>
+                <textarea id="description" class="uk-textarea" rows="5"
+                    placeholder="Please add a breif description of your recipe"></textarea>               
+            </div>
+
+              <div class="uk-margin">
+                <label class="uk-form-label">Instructions</label>
+                <textarea id="instructions" class="uk-textarea" rows="5"
+                    placeholder="Please add a breif recipe inostructions of your recipe"></textarea>               
+            </div>
+ 
+            <!-- Add Ingredients -->
+            <div class="uk-margin">
+                <label class="uk-form-label">Add Ingredients</label>
+                <textarea name="ingredients" id="ingredients" class="uk-textarea" rows="5"
+                    placeholder="Please add list of ingredients on your recipe"></textarea>
+            </div>
+
+            <!-- Upload a picture -->
+            <div class="uk-margin">
+                <div class="js-upload uk-placeholder uk-text-center">
+                    <span uk-icon="icon: cloud-upload"></span>
+                    <span class="uk-text-middle">Attach binaries by dropping them here or</span>
+                    <div uk-form-custom>
+                        <input type="file" multiple>
+                        <span id="upload-pic" class="uk-link">selecting one</span>
+                    </div>
+
+                    <div class="uk-form-custom">
+                        <label for="image_link">Image link</label>
+                        <input type="text" id="image_link" class="form-control" placeholder="A url to your image">
+                    </div>
+                </div>
+            </div>
+            <progress id="js-progressbar" class="uk-progress" value="0" max="100" hidden></progress>
+
+            <div class="uk-margin uk-flex uk-flex-center">
+                <button id="submit-btn" class="uk-button uk-button-default" type="submit">Submit</button>
+            </div>
+        </form>
     </div>
 </div>
-<script src="../public/javascript/createRecipeProgressBar.js"></script>
+<!-- <script src="../public/javascript/createRecipeProgressBar.js"></script> 
+<script src="../public/javascript/add-recipe.js"></script> -->
+<script src="/javascript/add-recipe.js"></script>

@@ -10,5 +10,4 @@ router.get('/addRecipe', ( req, res) => {
     res.render('createRecipe');
 })
 
-
 module.exports = router;

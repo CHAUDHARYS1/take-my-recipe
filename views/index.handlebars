@@ -1,4 +1,23 @@
-<div>You are on the homepage
+<div>You are on the homepage</div>
 
-
+<div class="container">
+    <div class="uk-align-right">
+        <li class="uk-align-right">
+            <a href="/addRecipe">
+                <button class="uk-button uk-button-default uk-button-primary uk-align-right" id="add-recipe"
+                    type="button">
+                    + Add a Receipe <span class="uk-margin-small-right" uk-icon="search"></span>
+                </button>
+            </a>
+        </li>
+    </div>
+    <div class="row">
+        <div class="uk-child-width-expand@s uk-text-center" uk-grid>
+            <div>
+                {{#each recipes as |recipe|}}
+                {{> recipe-info recipe }}
+                {{/each}}
+            </div>
+        </div>
+    </div>
 </div>

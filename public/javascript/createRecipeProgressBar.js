@@ -41,5 +41,8 @@ UIkit.upload('.js-upload', {
         alert('Upload Completed');
     }
 
-});
+}); 
+
+
+
 
