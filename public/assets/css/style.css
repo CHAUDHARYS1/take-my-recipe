@@ -9,10 +9,37 @@
   a{
     color: black!important;
   }
-  .middle {
-    vertical-align: middle;
+
+  #recipe-info {
+    display: flex;
+    flex-direction: row !important;
+    width: 100% !important;
+    justify-content: space-evenly !important;
+    margin-bottom: 30px;
   }
- 
+
+  #recipe-nav-bar {
+    display: flex;
+    flex-direction: row !important;
+    width: 100% !important;
+    justify-content: space-evenly !important;
+    margin-bottom: 30px;
+  }
+/*
+.uk-align {
+    display: flex;
+    flex-direction: row !important;
+    width: 100% !important;
+    justify-content: space-evenly !important;
+    margin-bottom: 30px;
+}
+ .recipe-nav-bar {
+  display: flex;
+  flex-direction: row !important;
+  width: 100% !important;
+  justify-content: space-evenly !important;
+  margin-bottom: 30px;
+}*/
   .footer-content{
     padding: 15px; 
   }

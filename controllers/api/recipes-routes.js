@@ -5,7 +5,7 @@ router.get("/", (req, res) => {
   console.log(req.session);
   console.log("recipe route called");
   Recipe.findAll({
-    attributes: ["id", "title", "description", "category", "imageUrl", "ingredients"],
+    attributes: ["id", "title", "description", "category", "imageUrl", "ingredients", "instructions"],
   })
     .then((dbRecipeData) => {
       res.json(dbRecipeData);
@@ -16,14 +16,30 @@ router.get("/", (req, res) => {
     });
 });
 
+// get all recipes by category
+router.get('/:category', (req, res) => {
+  Recipe.findAll({
+      where: {
+        category: req.params.category
+      },
+      attributes: ["id", "title", "description", "category", "imageUrl", "ingredients", "instructions"],
+  })
+  .then(dbCategoryData => res.json(dbCategoryData))
+  .catch(err => {
+    console.log(err);
+    res.status(500).json(err);
+  });
+});
+
+
 //get one recipe
-router.get('/getRecipe/:id', (req, res) => {
+router.get('/singleRecipe/:id', (req, res) => {
   console.log("params id", req.params.id)
   Recipe.findOne({   
     where: {
       id: req.params.id
     },
-    attributes: [ "id", "title", "imageUrl", "description", "category", "ingredients"],
+    attributes: [ "id", "title", "imageUrl", "description", "category", "ingredients", "instructions"],
   })
     .then(singleReceipe => {
       console.log("single recipe ", singleReceipe)
@@ -39,20 +55,6 @@ router.get('/getRecipe/:id', (req, res) => {
     });
 });
 
-// get all recipes by category
-router.get('/:category', (req, res) => {
-  Recipe.findAll({
-      where: {
-        category: req.params.category
-      },
-      attributes: ["id", "title", "description", "category", "imageUrl", "ingredients"],
-  })
-  .then(dbCategoryData => res.json(dbCategoryData))
-  .catch(err => {
-    console.log(err);
-    res.status(500).json(err);
-  });
-});
 
 //post a recipe
 
