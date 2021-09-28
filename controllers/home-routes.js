@@ -33,6 +33,53 @@ router.get('/', (req, res) => {
         }); 
 }); 
 
+// get single recipe
+router.get('/singleRecipe/:id', (req,res) => {
+  Recipe.findOne({
+      where: {
+        id: req.params.id
+      },
+      attributes: [
+        'id',
+        'title',
+        'category',
+        'image_url',
+        'created_at',
+        'recipe_steps',
+        'ingredients'
+      ],
+      include: [
+        {
+          model: Comment,
+          attributes: ['id', 'comment_text', 'user_id', 'recipe_id', 'created_at'],
+          include: {
+            model: User,
+            attributes: ['username']
+          }
+        },
+        {
+          model: User,
+          attributes: ['username']
+        }
+      ]
+  })
+  .then(dbPostData => {
+      if (!dbPostData) {
+        res.status(404).json({ message: 'No post found with this id' });
+        return;
+      }
+      const recipe = dbPostData.get({ plain: true });
+      res.render('single-recipe', {
+        recipe,
+        loggedIn: req.session.loggedIn
+      });
+  })
+  .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+  });
+})
+
 //login / signup page
 router.get('/login', (req, res) => {
   if (req.session.loggedIn) {
