@@ -43,24 +43,10 @@ router.get('/singleRecipe/:id', (req,res) => {
         'id',
         'title',
         'category',
-        'image_url',
-        'created_at',
-        'recipe_steps',
+        'imageUrl',
+        'description',
+        'instructions',
         'ingredients'
-      ],
-      include: [
-        {
-          model: Comment,
-          attributes: ['id', 'comment_text', 'user_id', 'recipe_id', 'created_at'],
-          include: {
-            model: User,
-            attributes: ['username']
-          }
-        },
-        {
-          model: User,
-          attributes: ['username']
-        }
       ]
   })
   .then(dbPostData => {
@@ -69,7 +55,7 @@ router.get('/singleRecipe/:id', (req,res) => {
         return;
       }
       const recipe = dbPostData.get({ plain: true });
-      res.render('single-recipe', {
+      res.render('singleRecipe', {
         recipe,
         loggedIn: req.session.loggedIn
       });
@@ -86,7 +72,6 @@ router.get('/login', (req, res) => {
     res.redirect('/');
     return;
   }
-
   res.render('login');
 });
 
