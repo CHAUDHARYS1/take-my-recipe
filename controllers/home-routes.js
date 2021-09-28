@@ -66,6 +66,37 @@ router.get('/singleRecipe/:id', (req,res) => {
   });
 })
 
+router.get('/category/:category', (req, res) => {
+  console.log(req.params.category)
+  Recipe.findAll({
+      where: {
+        category: req.params.category
+      },
+      attributes: [
+          'id',
+          'title',
+          'category',
+          'imageUrl'
+      ],
+      order: [['created_at', 'DESC']], 
+     })
+      .then(dbPostData => {
+        if (!dbPostData) {
+          res.status(404).json({ message: 'No post found with this category' });
+          return;
+        }
+        const recipes = dbPostData.map(recipe => recipe.get({ plain: true }));
+        res.render('category', {
+          recipes,
+          loggedIn: req.session.loggedIn
+        });
+      })
+      .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+      });
+});
+
 //login / signup page
 router.get('/login', (req, res) => {
   if (req.session.loggedIn) {
