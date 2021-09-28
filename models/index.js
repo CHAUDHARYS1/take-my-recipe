@@ -26,4 +26,4 @@ Recipe.hasMany(Comment, {
 	foreignKey : 'recipe_id'
 });
 
-module.exports = { User, Recipe, Comment };
+module.exports = { User, Recipe, Comment};
