@@ -1,6 +1,8 @@
-<div>You are on the homepage</div>
+<div class="uk-container">
+    <h2>Suggestions for you...</h2>
+</div>
 
-<div class="container">
+<div class="uk-container">
     <div class="uk-align-right">
         <li class="uk-align-right">
             <a href="/addRecipe">
@@ -14,10 +16,35 @@
     <div class="row">
         <div class="uk-child-width-expand@s uk-text-center" uk-grid>
             <div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="uk-child-width-1-2@m" uk-grid>
+    <div>
+        <div class="uk-card uk-card-default">
+            <div class="uk-card-media-top">
+                <img src="images/light.jpg" alt="">
+            </div>
+            <div class="uk-card-body">
                 {{#each recipes as |recipe|}}
                 {{> recipe-info recipe }}
                 {{/each}}
             </div>
         </div>
     </div>
+    <div>
+        <div class="uk-card uk-card-default">
+            <div class="uk-card-body">
+                <h3 class="uk-card-title">Media Bottom</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+            </div>
+            <div class="uk-card-media-bottom">
+                <img src="images/light.jpg" alt="">
+            </div>
+        </div>
+    </div>
 </div>
+ 
