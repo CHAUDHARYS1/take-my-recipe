@@ -16,7 +16,8 @@
         <div class="uk-navbar-left">
             <!-- Logo/Home button -->
             <a class="uk-navbar-item uk-logo" href="/">
-                <img src="/images/logo.png" class="uk-center" alt="Take My Recipe logo" uk-tooltip="title: Go back to the homepage; pos: bottom" />
+                <img src="/images/logo.png" class="uk-center" alt="Take My Recipe logo"
+                    uk-tooltip="title: Go back to the homepage; pos: bottom" />
             </a>
         </div>
 
@@ -24,8 +25,17 @@
         <div class="uk-navbar-right">
             <!-- Login/Signup page -->
             <div class="uk-padding-small">
-                <a class="uk-button uk-button-default uk-button-small" href="/login" uk-icon="sign-in"  uk-tooltip="title: Login; pos: bottom"></a>
-                <a class="uk-button uk-button-primary uk-button-small" href="/signup" uk-icon="user" uk-tooltip="title: Signup; pos: bottom"></a>
+                {{#if loggedIn}}
+                 <a id="logout">
+                 <button class="uk-button uk-button-danger">Logout</button>
+                 </a>
+                {{else}}
+                <a class="uk-button uk-button-default uk-button-small" href="/login" uk-icon="sign-in"
+                    uk-tooltip="title: Login; pos: bottom"></a>
+                <a class="uk-button uk-button-primary uk-button-small" href="/signup" uk-icon="user"
+                    uk-tooltip="title: Signup; pos: bottom"></a>
+                {{/if}}
+
             </div>
         </div>
     </nav>
@@ -55,6 +65,9 @@
             </div>
         </div>
     </footer>
+    {{#if loggedIn}}
+    <script src="/javascript/logout.js"></script>
+    {{/if}}
     <!-- UIkit CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.7.4/dist/css/uikit.min.css" />
     <!-- UIkit JS -->
