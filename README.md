@@ -130,7 +130,6 @@ Project Link: [https://github.com/schaudhary1/take-my-recipe](https://github.com
 <!-- ACKNOWLEDGEMENTS -->
 ## Acknowledgements
 
-- [Mehak Rizvi](https://github.com/mehak-zehra) 
 - [Jaya Gudipalli](https://github.com/jaya1983)
 - [Conner Werth](https://github.com/Connorw2222)
 - [Shital Chaudhary](https://github.com/CHAUDHARYS1)
