@@ -3,11 +3,29 @@
     margin: 0;
 
   }
-  ul, ol, li, p, a, input, label, textarea, select, option {
+  ul, ol, li, p, a, input, label, textarea, select, option, button{
     font-size:12px!important;
   }
 
- 
+  .add-recipe-container{
+    margin-top: -40px;
+    text-align: right;
+    padding-bottom: 50px;
+  }
+  .add-recipe-container a{
+    border-radius: 20px!important;
+  }
+  .category-buttons{
+    border-radius: 20px!important;
+  }
+  .food-img{
+    height: 300px;
+    width: 300px;
+    text-align: center;
+  }
   .footer-content{
     padding: 15px; 
+  }
+  footer{
+    margin-top: 100px;
   }
