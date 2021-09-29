@@ -14,7 +14,16 @@ const seedAll = async () => {
   await seedRecipe();
   console.log('--------------');
   
+<<<<<<< HEAD
+  // await seedComments();
+  // console.log('--------------');
+
+
+
+  process.exit(0);
+=======
  process.exit(0);
+>>>>>>> c3ecd7dd55d42cab2d71d296e89ca786467512e6
 };
 
 seedAll();

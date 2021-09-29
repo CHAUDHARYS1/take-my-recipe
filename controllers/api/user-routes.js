@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User, Recipe} = require('../../models');
+const { User, Recipe, Comment} = require('../../models');
 
 router.get('/', (req, res) => {
     console.log('Hi');
@@ -22,6 +22,7 @@ router.post('/', (req, res) => {
         email: req.body.email,
         password: req.body.password
     })
+    
     .then(dbUserData => {
       req.session.save(() => {
         req.session.user_id = dbUserData.id;
