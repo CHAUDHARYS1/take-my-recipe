@@ -1,12 +1,18 @@
-           <!-- Tabs Content -->
-           <div class="row">
-                    
-            <div class="tab-content">
-                <div class="row">
-                    {{#each recipes as |recipe|}}
-                    {{> recipe-info recipe }}
-                    {{/each}} 
-                </div>
-            </div>
+<!-- Breadcrumb -->
+<div>
+    <ul class="uk-breadcrumb">
+        <li><a href="/">Home</a></li>
+        <li class="uk-disabled"><a href="#">Category</a></li>
+    </ul>
+</div>
 
-        </div>
+<!-- Recipe Grid -->
+<div class="uk-text-center">
+<div class="uk-flex-left" uk-grid>
+    {{#each recipes as |recipe|}}
+    <div class="uk-card ">
+        {{> recipe-info recipe }}
+    </div>
+    {{/each}}
+</div>
+</div>

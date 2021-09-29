@@ -6,7 +6,9 @@
   ul, ol, li, p, a, input, label, textarea, select, option, button{
     font-size:12px!important;
   }
-
+  .uk-margin-left-small{
+    margin-left: 5px;
+  }
   .add-recipe-container{
     margin-top: -40px;
     text-align: right;
@@ -22,6 +24,10 @@
     height: 300px;
     width: 300px;
     text-align: center;
+    border-radius: 15px
+  }
+  .food-img:hover{
+    opacity: .8;
   }
   .footer-content{
     padding: 15px; 
