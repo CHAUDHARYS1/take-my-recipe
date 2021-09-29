@@ -1,22 +1,27 @@
+
+<br>
 <!-- Breadcrumb -->
 <div>
     <ul class="uk-breadcrumb">
-        <li ><a href="/">Home</a></li>
+        <li><a href="/">Home</a></li>
         <li class="uk-disabled"><a href="/">View All Recipes</a></li>
     </ul>
 </div>
 
 <!-- Link to other pages -->
 <div class="uk-flex">
-    <div class="uk-disabled"><a href="/" class="uk-button uk-button-default uk-text-success category-buttons">View All Recipes</a>
+    <div class="uk-disabled"><a href="/" class="uk-button uk-button-default uk-text-success category-buttons">View All
+            Recipes</a>
     </div>
     <div class="uk-margin-left-small"><a href="/category/Appetizer"
             class="uk-button uk-button-default category-buttons">Appetizers</a></div>
     <div class="uk-margin-left-small"><a href="/category/Breakfast"
             class="uk-button uk-button-default category-buttons">Breakfast</a></div>
-    <div class="uk-margin-left-small"><a href="/category/Lunch" class="uk-button uk-button-default category-buttons">Lunch</a>
+    <div class="uk-margin-left-small"><a href="/category/Lunch"
+            class="uk-button uk-button-default category-buttons">Lunch</a>
     </div>
-     <div class="uk-margin-left-small"><a href="/category/Dinner" class="uk-button uk-button-default category-buttons">Dinner</a>
+    <div class="uk-margin-left-small"><a href="/category/Dinner"
+            class="uk-button uk-button-default category-buttons">Dinner</a>
     </div>
 </div>
 
@@ -28,13 +33,13 @@
 
 <!-- Recipe Grid -->
 <div class="uk-text-center">
-<div class="uk-flex-center" uk-grid>
-    {{#each recipes as |recipe|}}
-    <div class="uk-card ">
-        {{> recipe-info recipe }}
+    <div class="uk-flex-center" uk-grid>
+        {{#each recipes as |recipe|}}
+        <div class="uk-card ">
+            {{> recipe-info recipe }}
+        </div>
+        {{/each}}
     </div>
-    {{/each}}
-</div>
 </div>
 {{!--
 <a href="/addRecipe">
