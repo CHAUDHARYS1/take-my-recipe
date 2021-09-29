@@ -1,23 +1,49 @@
-<div>You are on the homepage</div>
 
-<div class="container">
-    <div class="uk-align-right">
-        <li class="uk-align-right">
-            <a href="/addRecipe">
-                <button class="uk-button uk-button-default uk-button-primary uk-align-right" id="add-recipe"
-                    type="button">
-                    + Add a Receipe <span class="uk-margin-small-right" uk-icon="search"></span>
-                </button>
-            </a>
-        </li>
+<br>
+<!-- Breadcrumb -->
+<div>
+    <ul class="uk-breadcrumb">
+        <li><a href="/">Home</a></li>
+        <li class="uk-disabled"><a href="/">View All Recipes</a></li>
+    </ul>
+</div>
+
+<!-- Link to other pages -->
+<div class="uk-flex">
+    <div class="uk-disabled"><a href="/" class="uk-button uk-button-default uk-text-success category-buttons">View All
+            Recipes</a>
     </div>
-    <div class="row">
-        <div class="uk-child-width-expand@s uk-text-center" uk-grid>
-            <div>
-                {{#each recipes as |recipe|}}
-                {{> recipe-info recipe }}
-                {{/each}}
-            </div>
-        </div>
+    <div class="uk-margin-left-small"><a href="/category/Appetizer"
+            class="uk-button uk-button-default category-buttons">Appetizers</a></div>
+    <div class="uk-margin-left-small"><a href="/category/Breakfast"
+            class="uk-button uk-button-default category-buttons">Breakfast</a></div>
+    <div class="uk-margin-left-small"><a href="/category/Lunch"
+            class="uk-button uk-button-default category-buttons">Lunch</a>
+    </div>
+    <div class="uk-margin-left-small"><a href="/category/Dinner"
+            class="uk-button uk-button-default category-buttons">Dinner</a>
     </div>
 </div>
+
+<!-- Add a recipe button -->
+<div class="add-recipe-container">
+    <a href="/addRecipe" class="uk-button uk-button-primary" id="add-recipe">+ Add a Receipe</a>
+</div>
+
+
+<!-- Recipe Grid -->
+<div class="uk-text-center">
+    <div class="uk-flex-center" uk-grid>
+        {{#each recipes as |recipe|}}
+        <div class="uk-card ">
+            {{> recipe-info recipe }}
+        </div>
+        {{/each}}
+    </div>
+</div>
+{{!--
+<a href="/addRecipe">
+    <button class="uk-button uk-button-default uk-button-primary uk-align-right" id="add-recipe" type="button">
+        + Add a Receipe</span>
+    </button>
+</a> --}}

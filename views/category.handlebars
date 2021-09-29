@@ -1,0 +1,18 @@
+<!-- Breadcrumb -->
+<div>
+    <ul class="uk-breadcrumb">
+        <li><a href="/">Home</a></li>
+        <li class="uk-disabled"><a href="#">Category</a></li>
+    </ul>
+</div>
+
+<!-- Recipe Grid -->
+<div class="uk-text-center">
+<div class="uk-flex-left" uk-grid>
+    {{#each recipes as |recipe|}}
+    <div class="uk-card ">
+        {{> recipe-info recipe }}
+    </div>
+    {{/each}}
+</div>
+</div>

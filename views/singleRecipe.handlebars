@@ -1,0 +1,42 @@
+<div>
+    <ul class="uk-breadcrumb">
+        <li><a href="/">Home</a></li>
+        <li class="uk-disabled"><a href="#">{{recipe.category}}</a></li>
+        <li class="uk-disabled"><a href="#">{{recipe.title}}</a></li>
+    </ul>
+</div>
+
+<div class="uk-child-width-expand@s" uk-grid>
+    <div>
+        <div class="uk-card uk-card-default uk-card-body">
+            <h4 class="uk-margin-remove-bottom">Recipe for: </h4>
+            <h3 class="uk-heading-small uk-margin-remove-top">{{recipe.title}}</h3>
+            <hr>
+            <!-- Description -->
+            <h5 class="uk-margin-remove-bottom">Description:</h5>
+            <div class="uk-margin-remove-top">
+                <p>{{recipe.description}}</p>
+            </div>
+            <!-- Ingredients -->
+            <h5 class="uk-margin-remove-bottom">Ingredients:</h5>
+            <div class="uk-margin-remove-top">
+                <p>{{recipe.ingredients}}</p>
+            </div>
+            <!-- Instructions -->
+            <h5 class="uk-margin-remove-bottom">Instructions:</h5>
+            <div class="uk-margin-remove-top">
+                <p>{{recipe.instructions}}</p>
+            </div>
+        </div>
+    </div>
+
+     <div>
+        <div class="uk-card uk-card-default uk-card-body uk-padding-remove">
+            <img src="{{recipe.imageUrl}}" height="" width="100%" />
+        </div>
+    </div>
+</div>
+
+<div class="uk-align-center uk-flex uk-flex-center">
+    <button class="uk-button uk-button-default">Comment</button>
+</div>

@@ -2,9 +2,7 @@
 async function newFormHandler(event) {
     event.preventDefault();
     const title = document.getElementById('recipe-name').value;
-    alert( title)
     const category = document.getElementById('form-stacked-select').value;
-    alert(category);
     const description = document.getElementById('description').value;
     const instructions = document.getElementById('instructions').value;
     const imageUrl = document.getElementById('image_link').value; 
@@ -36,10 +34,3 @@ async function newFormHandler(event) {
   var submitBtn = document.querySelector('#submit-btn');
   submitBtn.addEventListener("click", newFormHandler);
 
-  /*
-function myTest() {
-    console.log('reached add new recipe form handler');
- }
-
- var submitBtn = document.querySelector('#submit-btn');
- submitBtn.addEventListener("click", myTest); */
