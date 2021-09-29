@@ -44,6 +44,17 @@
   overflow: hidden;
   text-overflow: ellipsis;
   }
+
+  #add-recipe span{
+    transition:.5s;
+  }
+  #add-recipe span:hover{
+    -o-transform:rotate(90deg);
+    -ms-transform:rotate(90deg);
+    -moz-transform:rotate(90deg);
+    -webkit-transform:rotate(90deg);
+    transform:rotate(90deg);
+  }
   footer{
     margin-top: 100px;
   }
