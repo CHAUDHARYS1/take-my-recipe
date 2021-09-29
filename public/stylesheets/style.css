@@ -6,6 +6,9 @@
   ul, ol, li, p, a, input, label, textarea, select, option, button{
     font-size:12px!important;
   }
+  .uk-logo:hover{
+    opacity: .6!important;
+  }
   .uk-margin-left-small{
     margin-left: 5px;
   }
