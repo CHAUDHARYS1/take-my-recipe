@@ -1,6 +1,7 @@
 * {
     padding: 0;
     margin: 0;
+    scroll-behavior: smooth;
 
   }
   ul, ol, li, p, a, input, label, textarea, select, option, button{
