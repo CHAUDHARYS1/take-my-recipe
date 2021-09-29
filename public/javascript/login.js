@@ -1,39 +1,12 @@
-const { response } = require("express");
-
-async function signupFormHandler(event) {
-    event.preventDefault();
-
-    const email = document.querySelector('#email-signup').value.trim();
-    const password = document.querySelector('#password-signup').value.trim();
-
-    if (username && email && password){
-        const response = await fetch('/api/users',{ 
-            method: 'post',
-            body: JSON.stringify({
-                username, 
-                email, 
-                password
-            }),
-            headers: { 'Content-Type': 'application/json' }
-        });
-        if (response.ok){
-            console.log('success');
-        } else {
-            alert(response.statusText);
-        }
-    }
-}
-
-document.querySelector('.signup-form').addEventListener('submit', signupFormHandler);
 
 async function loginFormHandler(event) {
     event.preventDefault();
-  
-    const email = document.querySelector('#email-login').value.trim();
-    const password = document.querySelector('#password-login').value.trim();
+    alert('log in clicked')
+    const email = document.querySelector('#email').value.trim();
+    const password = document.querySelector('#password').value.trim();
   
     if (email && password) {
-      const response = await fetch('/api/users', {
+      const response = await fetch('/api/users/login', {
         method: 'POST',
         body: JSON.stringify({
           email,
@@ -49,5 +22,8 @@ async function loginFormHandler(event) {
       }
     }
   }
+
+  //var loginBtn = document.getElementById('login');
+  var loginBtn = document.querySelector('#login');
   
-  document.querySelector('.login-form').addEventListener('submit', loginFormHandler);
+  loginBtn.addEventListener("click", loginFormHandler);
