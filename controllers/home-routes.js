@@ -66,7 +66,6 @@ router.get('/singleRecipe/:id', (req,res) => {
   });
 })
 
-//get recipe by category
 router.get('/category/:category', (req, res) => {
   console.log(req.params.category)
   Recipe.findAll({
@@ -80,7 +79,7 @@ router.get('/category/:category', (req, res) => {
           'imageUrl'
       ],
       order: [['created_at', 'DESC']], 
-  })
+     })
       .then(dbPostData => {
         if (!dbPostData) {
           res.status(404).json({ message: 'No post found with this category' });
