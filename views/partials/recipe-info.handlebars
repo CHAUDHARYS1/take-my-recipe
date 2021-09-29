@@ -1,10 +1,11 @@
 <div class="uk-card-media-top">
     <a href="/singleRecipe/{{id}}">
-        <img src="{{imageUrl}}" class="food-img"  alt="" />
+        <img src="{{imageUrl}}" class="food-img" alt="" />
     </a>
 </div>
-<div class="uk-card-body">
-    <a href="/singleRecipe/{{id}}">
-    <h3 class="uk-card-title">{{title}}</h3>
-    </a>
+<div class="uk-card-body uk-text-left">
+    <h3 class="uk-card-title uk-margin-remove">{{title}}</h3>
+    <p class="uk-margin-remove-top food-description">{{description}}</p>
+    <a href="/singleRecipe/{{id}}" uk-icon="chevron-double-right">Learn more</a>
 </div>
+
