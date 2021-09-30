@@ -1,18 +1,16 @@
+
+<div class="uk-cover-container">
+    <video src="/images/cooking-mp4.mp4" loop muted playsinline uk-video="autoplay: inview"></video>
+</div>
 <!-- Breadcrumb -->
-<div>
+<div class="uk-margin-top">
     <ul class="uk-breadcrumb">
         <li><a href="/">Home</a></li>
         <li class="uk-disabled"><a href="/">View All Recipes</a></li>
     </ul>
 </div>
-
-<div>
-  <video src="/images/cooking-mp4.mp4" loop muted playsinline uk-video="autoplay: inview"></video>
- 
-</div>
-
 <!-- Link to other pages -->
-<div class="uk-flex uk-margin-top-medium">
+<div class="uk-flex">
     <div class="uk-disabled"><a href="/" class="uk-button uk-button-default category-buttons">View All
             Recipes</a>
     </div>
@@ -31,7 +29,8 @@
 <!-- Add a recipe button -->
 
 <div class="add-recipe-container">
-    <a href="/addRecipe" class="uk-button uk-button-primary" id="add-recipe" uk-tooltip="Add a recipe"><span uk-icon="plus"></span></a>
+    <a href="/addRecipe" class="uk-button uk-button-primary" id="add-recipe" uk-tooltip="Add a recipe"><span
+            uk-icon="plus"></span></a>
 </div>
 
 
@@ -39,13 +38,13 @@
 <div class="uk-text-center">
     <div class="uk-flex-center" uk-grid>
         {{#each recipes as |recipe|}}
-        <div class="uk-card uk-card-default uk-margin-left uk-card-hover" style="padding-left: 0px !important; border-radius:10px!important">
+        <div class="uk-card uk-card-default uk-margin-left uk-card-hover"
+            style="padding-left: 0px !important; border-radius:10px!important">
             {{> recipe-info recipe }}
         </div>
         {{/each}}
     </div>
     <div class="uk-padding">
-    <a href="#toTop"  class="" uk-tooltip="Back to Top" uk-totop></a>
+        <a href="#toTop" class="" uk-tooltip="Back to Top" uk-totop></a>
     </div>
 </div>
-
