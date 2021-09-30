@@ -1,16 +1,16 @@
 # Take My Recipe
 
-<!-- PROJECT LOGO 
+<!-- PROJECT LOGO  -->
 <br />
 <p align="center">
   <a href="https://github.com/schaudhary1/take-my-recipe">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+    <img src="./public/images/logo.png" alt="Logo" width="100" height="">
   </a>
 
-  <h3 align="center">Take My Recipe/h3>
+  <h3 align="center">Take My Recipe</h3>
 
   <p align="center">
-    project_description
+    A platform to collect and share everyone’s best recipes!
     <br />
     <a href="https://github.com/schaudhary1/take-my-recipe"><strong>Explore the docs »</strong></a>
     <br />
@@ -22,10 +22,9 @@
     <a href="https://github.com/schaudhary1/take-my-recipe/issues">Request Feature</a>
   </p>
 </p>
--->
 
 
-<!-- TABLE OF CONTENTS 
+<!-- TABLE OF CONTENTS -->
 <details open="open">
   <summary><h2 style="display: inline-block">Table of Contents</h2></summary>
   <ol>
@@ -38,51 +37,54 @@
     <li>
       <a href="#getting-started">Getting Started</a>
       <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
         <li><a href="#installation">Installation</a></li>
       </ul>
     </li>
     <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
     <li><a href="#acknowledgements">Acknowledgements</a></li>
   </ol>
 </details>
--->
 
 
-<!-- ABOUT THE PROJECT 
+
+<!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+Take My Recipe is an web application built entirely from JavaScript which has a couple of cool features. It's main purpose is to allow users to add recipe for others users to see and try it out. User have the ability to add their own recipe or... try someone elses. User will also have the ability to comment on the recipes of their choosing. 
 
-Here's a blank template to get started:
-**To avoid retyping too much info. Do a search and replace with your text editor for the following:**
-`schaudhary1`, `take-my-recipe`, `twitter_handle`, `Shitalchau10@gmail.com`, `project_title`, `project_description`
-
+![homepage](https://user-images.githubusercontent.com/39867916/135366591-7117c3e2-85a2-4240-b582-c23c49632db1.png)
 
 ### Built With
 
-* []()
-* []()
-* []()
+* Node.js and Express.js
+* Handlebars.js
+* MySQL
+* Sequelize ORM
+* HTML
+* CSS
+* uiKit
+* JavaScript
 
--->
 
-<!-- GETTING STARTED 
+### Requirements
+* Use Node.js and Express.js to create a RESTful API.
+* Use Handlebars.js as the templating engine.
+* Use MySQL and the Sequelize ORM for the database.
+* Have both GET and POST routes for retrieving and adding new data.
+* Have a polished UI.
+* Be responsive.
+* Interactive (i.e., accept and respond to user input).
+* Have a folder structure that meets the MVC paradigm.
+* Include authentication (express-session and cookies).
+* Potect API keys and sensitive information with environment variables.
+
+<!-- GETTING STARTED  -->
 ## Getting Started
 
 To get a local copy up and running follow these simple steps.
 
-### Prerequisites
-
-This is an example of how to list things you need to use the software and how to install them.
-* npm
-  ```sh
-  npm install npm@latest -g
-  ```
 
 ### Installation
 
@@ -94,17 +96,33 @@ This is an example of how to list things you need to use the software and how to
    ```sh
    npm install
    ```
+3. Start your Server
+    ```sh 
+    npm run nodemon 
+    ```
+4. Go your browser and type in the URL the following:
+    ```sh
+    http://localhost:#ADD PORT NUMBER HERE
+    ```
 
--->
 
-<!-- USAGE EXAMPLES 
+<!-- USAGE EXAMPLES  -->
 ## Usage
 
 Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
 
-_For more examples, please refer to the [Documentation](https://example.com)_
+1. Login or Signup
+![login](https://user-images.githubusercontent.com/39867916/135368167-30216e9a-6d89-4aa6-8523-4a399a5bb7c0.png)
+![signup](https://user-images.githubusercontent.com/39867916/135368170-a7d90f94-2b4e-453d-ac2a-90b4be281364.png)
 
--->
+2. Add your recipe
+
+![add recipe](https://user-images.githubusercontent.com/39867916/135368226-b82cf74f-102f-4972-91d8-7c0b7f6c0e00.png)
+
+
+3. Checkout your created recipe
+![pancake](https://user-images.githubusercontent.com/39867916/135368230-1ea105a1-8311-4888-b4e3-f1f9fb67f8b4.png)
+
 <!-- CONTRIBUTING -->
 ## Contributing
 
@@ -133,22 +151,3 @@ Project Link: [https://github.com/schaudhary1/take-my-recipe](https://github.com
 - [Jaya Gudipalli](https://github.com/jaya1983)
 - [Conner Werth](https://github.com/Connorw2222)
 - [Shital Chaudhary](https://github.com/CHAUDHARYS1)
-
-
-
-
-
-<!-- MARKDOWN LINKS & IMAGES -->
-<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/schaudhary1/repo.svg?style=for-the-badge
-[contributors-url]: https://github.com/schaudhary1/take-my-recipe/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/schaudhary1/repo.svg?style=for-the-badge
-[forks-url]: https://github.com/schaudhary1/take-my-recipe/network/members
-[stars-shield]: https://img.shields.io/github/stars/schaudhary1/repo.svg?style=for-the-badge
-[stars-url]: https://github.com/schaudhary1/take-my-recipe/stargazers
-[issues-shield]: https://img.shields.io/github/issues/schaudhary1/repo.svg?style=for-the-badge
-[issues-url]: https://github.com/schaudhary1/take-my-recipe/issues
-[license-shield]: https://img.shields.io/github/license/schaudhary1/repo.svg?style=for-the-badge
-[license-url]: https://github.com/schaudhary1/take-my-recipe/blob/master/LICENSE.txt
-[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[linkedin-url]: https://linkedin.com/in/schaudhary1
