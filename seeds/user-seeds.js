@@ -54,9 +54,13 @@ const userdata = [
     lastName:"testLast9",
     email: 'test9@',
     password: 'password9'
+  },
+  {
+    firstName:"testuser10",
+    lastName:"testLast10",
+    email: 'test10@',
+    password: 'password10'
   }
-  
-
 ];
 
 const seedUsers = () => User.bulkCreate(userdata, { individualHooks: true, returning: true });
