@@ -69,14 +69,6 @@ router.post("/", (req, res) => {
     });
 });
 
- // title: req.body.title,
-    // ingredients: req.body.ingredients,
-    // description: req.body.description,
-    // category: req.body.category,
-    // instructions: req.body.instructions,
-    // imageUrl: req.body.imageUrl,
-
-// update by id
 router.put('/update/:id',  (req, res) => {
   Recipe.update(req.body,
     {
