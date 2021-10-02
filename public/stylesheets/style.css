@@ -60,6 +60,13 @@
     -webkit-transform:rotate(90deg);
     transform:rotate(90deg);
   }
+
+  #togglePassword {
+    position: absolute;
+    margin-top: 7px;
+    margin-left:80px;
+    cursor: pointer;
+}
   footer{
     margin-top: 100px;
   }
