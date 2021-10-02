@@ -15,13 +15,20 @@ router.get('/', (req, res) => {
             'description',         
             'category',
             'ingredients',
-            'imageUrl'
+            'imageUrl',
+            'instructions'         
         ],
+        order: [['created_at', 'DESC']], 
+        include: [
+            {
+              model: User,
+              attributes: ['email']
+            }
+        ]
     })
         .then(dbPostData => {
           const recipes = dbPostData.map(recipe => recipe.get({ plain: true }));
           console.log("recipes", recipes);
-
           res.render('index', {            
           recipes,
           loggedIn: req.session.loggedIn
