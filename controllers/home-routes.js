@@ -54,7 +54,17 @@ router.get('/singleRecipe/:id', (req,res) => {
         'description',
         'instructions',
         'ingredients'
-      ]
+      ],
+      include: [
+        {
+          model: Comment,
+          attributes: [
+            'id',
+            'comment_text',
+            'created_at'
+          ]
+        }
+    ]
   })
   .then(dbPostData => {
       if (!dbPostData) {
