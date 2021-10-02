@@ -30,13 +30,54 @@
         </div>
     </div>
 
-     <div>
+    <div>
         <div class="uk-card uk-card-default uk-card-body uk-padding-remove">
             <img src="{{recipe.imageUrl}}" height="" width="100%" />
         </div>
     </div>
 </div>
 
-<div class="uk-align-center uk-flex uk-flex-center">
-    <button class="uk-button uk-button-default">Comment</button>
+
+<!-- Comments -->
+<div class="uk-text-center uk-padding-large uk-padding-remove-bottom">
+    <h3>What others have to say about this recipe...</h3>
 </div>
+<div uk-grid>
+
+    <!-- Loop starts -->
+    <div>
+        <article class="uk-comment uk-comment-primary">
+            <header class="uk-comment-header">
+                <div class="uk-grid-medium uk-flex-middle" uk-grid>
+                    <div class="uk-width-auto">
+                        <img class="uk-comment-avatar" src="images/avatar.jpg" width="80" height="80" alt="">
+                    </div>
+                    <div class="uk-width-expand">
+                        <h4 class="uk-comment-title uk-margin-remove"><a class="uk-link-reset" href="#">Author</a></h4>
+                        <ul class="uk-comment-meta uk-subnav uk-subnav-divider uk-margin-remove-top">
+                            <li><a href="#">12 days ago</a></li>
+                            <li><a href="#">Reply</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </header>
+            <div class="uk-comment-body">
+                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
+                    labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
+                    et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+            </div>
+        </article>
+    </div>
+    <!-- Loop ends -->
+</div>
+<form class="uk-form-stacked uk-margin">
+    <div>
+        <p class="uk-form-label">Write a comment:</p>
+        <div class="uk-form-controls">
+            <textarea name="comment" id="commentText"  rows="5" class="uk-textarea uk-form-width-large"></textarea>
+        </div>
+    </div>
+    <div class="uk-margin">
+    <button type="submit" class="uk-button uk-button-default">add comment</button>
+    </div>
+</form>
