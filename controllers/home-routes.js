@@ -61,7 +61,8 @@ router.get('/singleRecipe/:id', (req,res) => {
           attributes: [
             'id',
             'comment_text',
-            'created_at'
+            'created_at', 
+            'updated_at'
           ]
         }
     ]
