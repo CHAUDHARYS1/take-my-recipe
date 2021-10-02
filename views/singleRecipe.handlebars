@@ -45,7 +45,7 @@
 <div uk-grid>
 
     <!-- Loop starts -->
-    <div>
+    {{!-- <div>
         <article class="uk-comment uk-comment-primary">
             <header class="uk-comment-header">
                 <div class="uk-grid-medium uk-flex-middle" uk-grid>
@@ -67,17 +67,20 @@
                     et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
             </div>
         </article>
-    </div>
+    </div> --}}
     <!-- Loop ends -->
+    {{> comments recipe.comments}}
 </div>
+
+<!-- Comment Form -->
 <form class="uk-form-stacked uk-margin">
     <div>
         <p class="uk-form-label">Write a comment:</p>
         <div class="uk-form-controls">
-            <textarea name="comment" id="commentText"  rows="5" class="uk-textarea uk-form-width-large"></textarea>
+            <textarea name="comment" id="commentText" rows="5" class="uk-textarea uk-form-width-large"></textarea>
         </div>
     </div>
     <div class="uk-margin">
-    <button type="submit" class="uk-button uk-button-default">add comment</button>
+        <button type="submit" class="uk-button uk-button-default">add comment</button>
     </div>
 </form>
