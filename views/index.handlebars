@@ -1,17 +1,17 @@
+<!-- Video Component commented out for testing purposes -->
 
+{{!--  
 <div class="uk-cover-container">
     <video src="/images/cooking-mp4.mp4" loop muted playsinline uk-video="autoplay: inview"></video>
-</div>
+</div> --}}
+
+
 <!-- Breadcrumb -->
 <div class="uk-margin-top">
     <ul class="uk-breadcrumb">
         <li><a href="/">Home</a></li>
         <li class="uk-disabled"><a href="/">View All Recipes</a></li>
     </ul>
-</div>
-
-<div>
-  <video src="/images/cooking-mp4.mp4" loop muted playsinline uk-video="autoplay: inview"></video> 
 </div>
 
 <!-- Link to other pages -->
@@ -44,7 +44,7 @@
     <div class="uk-flex-center" uk-grid>
         {{#each recipes as |recipe|}}
         <div class="uk-card uk-card-default uk-margin-left uk-card-hover"
-            style="padding-left: 0px !important; border-radius:10px!important">
+            style="padding-left: 0px !important; border-radius:10px!important;">
             {{> recipe-info recipe }}
         </div>
         {{/each}}
