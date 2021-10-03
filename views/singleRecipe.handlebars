@@ -48,8 +48,15 @@
     {{> comments recipe.comments}}
 </div>
 
+<!-- Register to add comment -->
+{{#if loggedIn}}
+{{else}}
+<div class="uk-text-center">
+    <p>You must have an account with us to add a comment. <a href="/signup" uk-tooltip="Register for an account">I want to register.</a> <a href="/login" uk-tooltip="Login">I want to login.</a></p>
+</div>
+{{/if}}
 <!-- Comment Form -->
-
+{{#if loggedIn}}
 <button href="#toggle-animation" class="uk-button uk-button-default" type="button"
     uk-toggle="target: #toggle-animation; animation: uk-animation-fade">Add comment</button>
 <form class="uk-form-stacked uk-margin comment-form" id="toggle-animation" hidden>
@@ -64,5 +71,8 @@
         <button type="submit" class="uk-button uk-button-primary">SUBMIT</button>
     </div>
 </form>
+{{/if}}
 
+{{#if loggedIn}}
 <script src="/javascript/comment.js"></script>
+{{/if}}
