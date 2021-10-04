@@ -60,9 +60,19 @@ router.get('/singleRecipe/:id', (req,res) => {
           model: Comment,
           attributes: [
             'id',
+            'user_id',
             'comment_text',
             'created_at', 
             'updated_at'
+          ],
+          include: [
+            {
+              model: User, 
+              attributes: [
+                'first_name', 
+                'last_name'
+              ]
+            }
           ]
         }
     ]
@@ -73,6 +83,11 @@ router.get('/singleRecipe/:id', (req,res) => {
         return;
       }
       const recipe = dbPostData.get({ plain: true });
+      recipe.comments.map(comment => {
+        comment.nickname = comment.user.first_name[0].toUpperCase() + comment.user.last_name[0].toUpperCase();
+        console.log(comment);
+      })
+      // console.log(recipe.comments[0])
       res.render('singleRecipe', {
         recipe,
         loggedIn: req.session.loggedIn
@@ -104,8 +119,10 @@ router.get('/category/:category', (req, res) => {
           return;
         }
         const recipes = dbPostData.map(recipe => recipe.get({ plain: true }));
+        const category = req.params.category;
         res.render('category', {
           recipes,
+          category,
           loggedIn: req.session.loggedIn
         });
       })
