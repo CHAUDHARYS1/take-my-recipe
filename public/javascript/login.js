@@ -3,6 +3,23 @@ async function loginFormHandler(event) {
 
   const email = document.querySelector('#email').value.trim();
   const password = document.querySelector('#password').value.trim();
+  const errorMessage = document.querySelector('#error');
+  const validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+
+
+  if(email.match(validRegex)){
+  
+  }else{
+    errorMessage.classList.remove("uk-hidden");
+    errorMessage.innerText = "Please enter a correct email";
+    return false;
+  }
+  if(password === !null){
+    return true;
+  } else{
+    errorMessage.classList.remove("uk-hidden");
+    errorMessage.innerText = "Please enter a password";
+  }
 
   if (email && password) {
     const response = await fetch('/api/users/login', {
@@ -19,7 +36,9 @@ async function loginFormHandler(event) {
     if (response.ok) {
       document.location.replace('/');
     } else {
-      alert(response.statusText);
+      // alert(response.statusText);
+      errorMessage.classList.remove("uk-hidden");
+      errorMessage.innerText = "Invalid Email or Password";
     }
   }
 }
@@ -40,3 +59,5 @@ togglePassword.addEventListener('click', function (e) {
   // toggle the eye / eye slash icon
   this.classList.toggle('bi-eye');
 });
+
+

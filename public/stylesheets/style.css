@@ -82,6 +82,13 @@
   margin-left:-21px;
 
 }
+#myVideo{
+  width: 100%;
+  height: 300px;
+  background-size: cover;
+  background-position: bottom;
+  background-image: url('/images/cooking-mp4.mp4');
+} 
   footer{
     margin-top: 100px;
   }
