@@ -11,8 +11,6 @@ const commentdata = [
       user_id: 2,
       recipe_id: 1
     },
-
-
     {
       comment_text: 'Excellent dish',
       user_id: 3,
@@ -23,8 +21,6 @@ const commentdata = [
       user_id: 4,
       recipe_id: 2
     },
-
-
     {
       comment_text: 'My family loved it.',
       user_id: 5,
@@ -35,8 +31,6 @@ const commentdata = [
       user_id: 6,
       recipe_id: 3
     },
-
-
     {
       comment_text: 'Yummy!.',
       user_id: 7,
@@ -47,8 +41,6 @@ const commentdata = [
       user_id: 8,
       recipe_id: 4
     },
-
-
     {
       comment_text: 'Smelled amazing tasted better',
       user_id: 9,
@@ -59,22 +51,16 @@ const commentdata = [
       user_id: 10,
       recipe_id: 5
     },
-
-
     {
       comment_text: 'Sooooo flavorful.',
       user_id: 1,
       recipe_id: 6
     },
-
-
     {
       comment_text: 'To die for!',
       user_id: 2,
       recipe_id: 6
     },
-
-
     {
       comment_text: 'Made this at a dinner party. Everyone loved it!',
       user_id: 3,
@@ -85,8 +71,6 @@ const commentdata = [
       user_id: 4,
       recipe_id: 7
     },
-
-
     {
       comment_text: 'My daughter said it was "busin"',
       user_id: 5,
@@ -97,8 +81,6 @@ const commentdata = [
       user_id: 6,
       recipe_id: 8
     },
-
-
     {
       comment_text: 'Made this for date! She loved it!',
       user_id: 7,
@@ -109,13 +91,11 @@ const commentdata = [
       user_id: 8,
       recipe_id: 9
     },
-
-
     {
       comment_text: 'My new favorite dish',
       user_id: 9,
       recipe_id: 10
-    }
+    },
     {
       comment_text: 'Finally getting my kids to eat something new!',
       user_id: 10,
