@@ -15,7 +15,7 @@ router.get('/all', (req, res) => {
 
 // Create a new user
 router.post('/', (req, res) => {
-    console.log(req.body);
+   // console.log(req.body);
     User.create({
         firstName: req.body.firstName,
         lastName: req.body.lastName, 
@@ -26,6 +26,8 @@ router.post('/', (req, res) => {
     .then(dbUserData => {
       req.session.save(() => {
         req.session.user_id = dbUserData.id;
+        req.session.firstName = dbUserData.firstName;
+        req.session.lastName = dbUserData.lastName;
         req.session.email = dbUserData.email;
         req.session.loggedIn = true;
 
@@ -44,7 +46,7 @@ router.post('/login', (req, res) => {
       email: req.body.email,
    }
   }).then(dbUserData => {
-    console.log('user data' , dbUserData)
+   // console.log('user data' , dbUserData)
     if (!dbUserData) {
       res.status(400).json({ message: 'No user with that email!' });
       return;
@@ -59,6 +61,7 @@ router.post('/login', (req, res) => {
     req.session.save(() => {
       req.session.user_id = dbUserData.id;
       req.session.firstName = dbUserData.firstName;
+      req.session.lastName = dbUserData.lastName;
       req.session.loggedIn = true;
 
       res.json({ user: dbUserData, message: 'You are now logged in!' });

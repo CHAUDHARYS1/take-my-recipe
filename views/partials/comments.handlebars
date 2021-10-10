@@ -1,0 +1,22 @@
+{{#each this}}
+<div class="comments uk-margin uk-comment-primary">
+    <header class="uk-comment-header">
+        <div class="uk-grid-medium uk-flex-middle" uk-grid>
+            <div class="initials">
+                <!-- Comment ID -->
+                <span>{{nickname}}</span>
+            </div>
+            <div class="uk-width-expand">
+                <h4 class="uk-comment-title uk-margin-remove">{{user.first_name}} {{ user.last_name}}</h4>
+                <ul class="uk-comment-meta uk-subnav uk-subnav-divider uk-margin-remove-top">
+                    <li>POSTED ON {{format_date created_at}}</li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <div class="uk-comment-body">
+        <p>{{comment_text}}</p>
+    </div>
+    </article>
+
+</div>{{/each}}

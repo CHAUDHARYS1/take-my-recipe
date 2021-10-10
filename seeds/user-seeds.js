@@ -2,63 +2,63 @@ const { User } = require('../models');
 
 const userdata = [
   {
-    firstName:"testuser1",
-    lastName:"testLast1",
-    email: 'test1@',
+    firstName:"Connor",
+    lastName:"Werth",
+    email: 'connor2werth@gmail.com',
     password: 'password1'
   },
   {
-    firstName:"testuser2",
-    lastName:"testLast2",
-    email: 'test2@',
+    firstName:"Shital",
+    lastName:"Chaudhary",
+    email: 'shitalchau10@gmail.com',
     password: 'password2'
   },
   {
-    firstName:"testuser3",
-    lastName:"testLast3",
-    email: 'test3@',
+    firstName:"Jaya",
+    lastName:"Gudipalli",
+    email: 'gudipallijaya@gmail.com',
     password: 'password3'
   },
   {
-    firstName:"testuser4",
-    lastName:"testLast4",
-    email: 'test4@',
+    firstName:"Tyler",
+    lastName:"Arthur",
+    email: 'tyler.f.arthur@gmail.com',
     password: 'password4'
   },
   {
-    firstName:"testuser5",
-    lastName:"testLast5",
-    email: 'test5@',
+    firstName:"Negin",
+    lastName:"Tahvildary",
+    email: 'negin@mail.fresnostate.edu',
     password: 'password5'
   },
   {
-    firstName:"testuser6",
-    lastName:"testLast6",
-    email: 'test6@',
+    firstName:"Jeffrey",
+    lastName:"Susmarski",
+    email: 'jsusmarski@bootcampspot.com',
     password: 'password6'
   },
   {
-    firstName:"testuser7",
-    lastName:"testLast7",
-    email: 'test7@',
+    firstName:"Alexis",
+    lastName:"Virgen",
+    email: 'ff98@fresnou.org',
     password: 'password7'
   },
   {
-    firstName:"testuser8",
-    lastName:"testLast8",
-    email: 'test8@',
+    firstName:"Anthony",
+    lastName:"Sandez",
+    email: 'jjgm721@wowzaconcepts.com',
     password: 'password8'
   },
   {
-    firstName:"testuser9",
-    lastName:"testLast9",
-    email: 'test9@',
+    firstName:"Lilly",
+    lastName:"Vang",
+    email: 'lillyv717@gmail.com',
     password: 'password9'
   },
   {
-    firstName:"testuser10",
-    lastName:"testLast10",
-    email: 'test10@',
+    firstName:"Ami",
+    lastName:"Hyde-Mateo",
+    email: 'jjgm492@wowzaconcepts.com',
     password: 'password10'
   }
 ];

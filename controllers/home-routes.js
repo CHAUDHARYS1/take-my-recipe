@@ -1,13 +1,10 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
 const { Recipe, User, Comment} = require('../models');
-
+const withAuth = require("../utils/auth");
 
 //Home page route 
 router.get('/', (req, res) => {
- 
-   console.log(req.session)
- 
     Recipe.findAll({
          attributes: [
             'id',
@@ -22,7 +19,7 @@ router.get('/', (req, res) => {
         include: [
             {
               model: User,
-              attributes: ['email']
+              attributes: ['email'] //add all attributes
             }
         ]
     })
@@ -54,7 +51,28 @@ router.get('/singleRecipe/:id', (req,res) => {
         'description',
         'instructions',
         'ingredients'
-      ]
+      ],
+      include: [
+        {
+          model: Comment,
+          attributes: [
+            'id',
+            'user_id',
+            'comment_text',
+            'created_at', 
+            'updated_at'
+          ],
+          include: [
+            {
+              model: User, 
+              attributes: [
+                'first_name', 
+                'last_name'
+              ]
+            }
+          ]
+        }
+    ]
   })
   .then(dbPostData => {
       if (!dbPostData) {
@@ -62,6 +80,11 @@ router.get('/singleRecipe/:id', (req,res) => {
         return;
       }
       const recipe = dbPostData.get({ plain: true });
+      recipe.comments.map(comment => {
+        comment.nickname = comment.user.first_name[0].toUpperCase() + comment.user.last_name[0].toUpperCase();
+       // console.log(comment);
+      })
+      // console.log(recipe.comments[0])
       res.render('singleRecipe', {
         recipe,
         loggedIn: req.session.loggedIn
@@ -74,7 +97,7 @@ router.get('/singleRecipe/:id', (req,res) => {
 })
 
 router.get('/category/:category', (req, res) => {
-  console.log(req.params.category)
+ // console.log(req.params.category)
   Recipe.findAll({
       where: {
         category: req.params.category
@@ -93,8 +116,10 @@ router.get('/category/:category', (req, res) => {
           return;
         }
         const recipes = dbPostData.map(recipe => recipe.get({ plain: true }));
+        const category = req.params.category;
         res.render('category', {
           recipes,
+          category,
           loggedIn: req.session.loggedIn
         });
       })
@@ -103,6 +128,16 @@ router.get('/category/:category', (req, res) => {
         res.status(500).json(err);
       });
 });
+
+
+// add a recipe route
+router.get('/addRecipe', ( req, res) => {
+  if(!req.session.loggedIn) {
+       res.redirect('/login');
+       return;
+   }
+   res.render('createRecipe');
+})
 
 //login / signup page
 router.get('/login', (req, res) => {

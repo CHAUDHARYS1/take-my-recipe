@@ -2,24 +2,34 @@
     <fieldset class="uk-fieldset">
         <h2 class="uk-flex uk-flex-center">Sign Up</h2>
         <p class="uk-flex uk-flex-center">Sign up to gain access to more features</p>
+        <!-- Error  -->
+        <div class="uk-margin uk-flex uk-flex-center"><span class="uk-label uk-label-danger uk-hidden" id="error"></span></div>
+        <!-- First Name -->
         <div class="uk-margin uk-flex uk-flex-center">
-            <input class="uk-input uk-form-width-medium" type="text" placeholder="First Name" id = 'firstName'>
+            <input class="uk-input uk-form-width-medium" type="text" placeholder="First Name" id='firstName'>
         </div>
+        <!-- Last Name -->
         <div class="uk-margin uk-flex uk-flex-center">
-            <input class="uk-input uk-form-width-medium" type="text" placeholder="Last Name" id = 'lastName'>
+            <input class="uk-input uk-form-width-medium" type="text" placeholder="Last Name" id='lastName'>
         </div>
+        <!-- Email Address -->
         <div class="uk-margin uk-flex uk-flex-center">
-            <input class="uk-input uk-form-width-medium" type="email" placeholder="Email Address" id = 'emailSU'>
+            <input class="uk-input uk-form-width-medium" type="email" placeholder="Email Address" id='emailSU'>
         </div>
+        <!-- Password -->
         <div class="uk-margin uk-flex uk-flex-center">
-            <input class="uk-input uk-form-width-medium" type="password" placeholder="Password" id = 'pwSU'>
+            <input class="uk-input uk-form-width-medium" type="password" placeholder="Password" id='pwSU'>
         </div>
+        <!-- Confirm Password -->
         <div class="uk-margin uk-flex uk-flex-center">
-            <input class="uk-input uk-form-width-medium" type="password" placeholder="Confirm Password" id = 'pwConfirmSU'>
+            <input class="uk-input uk-form-width-medium" type="password" placeholder="Confirm Password"
+                id='pwConfirmSU'>
         </div>
+        <!-- Sign up Btn  -->
         <div class="uk-margin uk-flex uk-flex-center">
-            <button class="uk-button uk-button-default" type="submit" id = 'SUbtn'>Sign Up</button>
+            <button class="uk-button uk-button-default" type="submit" id='SUbtn'>Sign Up</button>
         </div>
     </fieldset>
+    <p class="uk-flex uk-flex-center">Have a account? <a href="/login"> Login</a></p>
 </form>
 <script src="/javascript/signup.js"></script>
