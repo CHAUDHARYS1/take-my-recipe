@@ -15,7 +15,7 @@ router.get('/all', (req, res) => {
 
 // post a comment
 router.post('/', (req, res) => {
-    console.log(req.session.user_id);
+    //console.log(req.session.user_id);
     Comment.create({
             comment_text: req.body.comment_text,
             recipe_id: req.body.recipe_id,

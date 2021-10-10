@@ -15,7 +15,7 @@ router.get('/all', (req, res) => {
 
 // Create a new user
 router.post('/', (req, res) => {
-    console.log(req.body);
+   // console.log(req.body);
     User.create({
         firstName: req.body.firstName,
         lastName: req.body.lastName, 
@@ -46,7 +46,7 @@ router.post('/login', (req, res) => {
       email: req.body.email,
    }
   }).then(dbUserData => {
-    console.log('user data' , dbUserData)
+   // console.log('user data' , dbUserData)
     if (!dbUserData) {
       res.status(400).json({ message: 'No user with that email!' });
       return;
