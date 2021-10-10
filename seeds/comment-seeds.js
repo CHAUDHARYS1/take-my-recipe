@@ -115,7 +115,7 @@ const commentdata = [
       comment_text: 'My new favorite dish',
       user_id: 9,
       recipe_id: 10
-    }
+    },
     {
       comment_text: 'Finally getting my kids to eat something new!',
       user_id: 10,
