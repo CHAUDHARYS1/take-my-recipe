@@ -74,6 +74,7 @@ router.post('/', withAuth, (req, res) => {
   Recipe.create({
     title: req.body.title,
     ingredients: req.body.ingredients,
+    description:req.body.description,
     instructions: req.body.instructions,
     category: req.body.category,
     imageUrl: req.body.imageUrl,
