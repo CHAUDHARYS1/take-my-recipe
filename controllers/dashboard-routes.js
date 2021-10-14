@@ -4,45 +4,46 @@ const { Recipe, User, Comment } = require("../models");
 const withAuth = require("../utils/auth");
 
 //Get all recipes for a user
-router.get('/',  (req, res) => {
-  console.log(req.session.user_id)
+router.get("/", withAuth, (req, res) => {
+  console.log(req.session.user_id);
   Recipe.findAll({
     where: {
-      user_id: req.session.user_id
+      user_id: req.session.user_id,
     },
     attributes: [
-      'id',
-      'title',
-      'ingredients',
-      'instructions',
-      'category',
-      'imageUrl'
-  ],
-  order: [['created_at', 'DESC']], 
-  include: [
+      "id",
+      "title",
+      "ingredients",
+      "instructions",
+      "category",
+      "imageUrl",
+    ],
+    order: [["created_at", "DESC"]],
+    include: [
       {
         model: Comment,
-        attributes: ['id', 'comment_text', 'user_id', 'recipe_id'],
+        attributes: ["id", "comment_text", "user_id", "recipe_id"],
         include: {
           model: User,
-          attributes: ['firstName', 'lastName']
-        }
+          attributes: ["firstName", "lastName"],
+        },
       },
       {
         model: User,
-        attributes: ['firstName', 'lastName']
-      }
-  ]
-})
-.then(dbUserRecipeData => {
-  const recipes = dbUserRecipeData.map(recipe => recipe.get({ plain: true }));
-  res.render('user-dashboard', { recipes, loggedIn: true });
-})
-.catch(err => {
-  console.log(err);
-  res.status(500).json(err);
-});
-
+        attributes: ["firstName", "lastName"],
+      },
+    ],
+  })
+    .then((dbUserRecipeData) => {
+      const recipes = dbUserRecipeData.map((recipe) =>
+        recipe.get({ plain: true })
+      );
+      res.render("user-dashboard", { recipes, loggedIn: true });
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
 });
 
 module.exports = router;
