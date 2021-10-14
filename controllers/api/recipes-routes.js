@@ -4,8 +4,8 @@ const { Recipe, User, Comment } = require("../../models");
 
 // get all recipes
 router.get("/", (req, res) => {
-  console.log(req.session);
-  console.log("recipe route called");
+ // console.log('res recipes-routes',res);
+  //console.log("recipe route called");
   Recipe.findAll({
     attributes: ["id", "title", "description", "category", "imageUrl", "ingredients"],
   })
@@ -20,7 +20,7 @@ router.get("/", (req, res) => {
 
 //get one recipe
 router.get('/getRecipe/:id', (req, res) => {
-  console.log("params id", req.params.id)
+ // console.log("params id", req.params.id)
   Recipe.findOne({   
     where: {
       id: req.params.id
@@ -56,7 +56,7 @@ router.get('/:category', (req, res) => {
   });
 });
 
-//post a recipe
+/*post a recipe
 router.post("/", (req, res) => {
   const body = req.body;
   Recipe.create({
@@ -67,9 +67,30 @@ router.post("/", (req, res) => {
       console.log(err);
       res.status(500).json(err);
     });
+});*/
+
+router.post('/', withAuth, (req, res) => {
+  console.log("user_id", req.session.user_id)
+  Recipe.create({
+    title: req.body.title,
+    ingredients: req.body.ingredients,
+    description:req.body.description,
+    instructions: req.body.instructions,
+    category: req.body.category,
+    imageUrl: req.body.imageUrl,
+    user_id: req.session.user_id
+  })
+    .then(dbPostData => {
+      res.json(dbPostData)
+      console.log(dbPostData)
+    })
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+    });
 });
 
-router.put('/update/:id',  (req, res) => {
+router.put('/update/:id', withAuth, (req, res) => {
   Recipe.update(req.body,
     {
       where: {
@@ -80,6 +101,27 @@ router.put('/update/:id',  (req, res) => {
     .then(dbPostData => {
       if (!dbPostData) {
         res.status(404).json({ message: 'No recipe found with this id' });
+        return;
+      }
+      res.json(dbPostData);
+    })
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
+
+
+// delete by user_id
+router.delete('/:id', withAuth, (req, res) => {
+  Recipe.destroy({
+    where: {
+      id: req.params.id
+    }
+  })
+    .then(dbPostData => {
+      if (!dbPostData) {
+        res.status(404).json({ message: 'No post found with this id' });
         return;
       }
       res.json(dbPostData);

@@ -30,13 +30,53 @@
         </div>
     </div>
 
-     <div>
+    <div>
         <div class="uk-card uk-card-default uk-card-body uk-padding-remove">
             <img src="{{recipe.imageUrl}}" height="" width="100%" />
         </div>
     </div>
 </div>
+ {{#if loggedIn}}
+  <a href="/editMyRecipe/{{recipe.id}}" class="uk-button uk-button-primary" id="edit-recipe" uk-icon="file-edit" ratio:1.5 uk-tooltip="title: edit; pos: bottom"></a>
+    <a class="uk-button uk-button-primary uk-button-medium" href="/deleteRecipe/{{recipe.id}}" uk-icon="trash" ratio:1.5
+                    uk-tooltip="title: delete; pos: bottom"></a>
+ {{/if}}
 
-<div class="uk-align-center uk-flex uk-flex-center">
-    <button class="uk-button uk-button-default">Comment</button>
+<!-- Comments -->
+<div class="uk-text-center uk-padding-large uk-padding-remove-bottom">
+    <h3>What others have to say about this recipe...</h3>
 </div>
+
+<!-- Comments list -->
+<div>
+    {{> comments recipe.comments}}
+</div>
+
+<!-- Register to add comment -->
+{{#if loggedIn}}
+{{else}}
+<div class="uk-text-center">
+    <p>You must have an account with us to add a comment. <a href="/signup" uk-tooltip="Register for an account">I want to register.</a> <a href="/login" uk-tooltip="Login">I want to login.</a></p>
+</div>
+{{/if}}
+<!-- Comment Form -->
+{{#if loggedIn}}
+<button href="#toggle-animation" class="uk-button uk-button-default" type="button"
+    uk-toggle="target: #toggle-animation; animation: uk-animation-fade">Add comment</button>
+<form class="uk-form-stacked uk-margin comment-form" id="toggle-animation" hidden>
+    <div>
+        <p class="uk-form-label">Write a comment:</p>
+        <div class="uk-form-controls">
+            <textarea name="comment-body" id="commentText" rows="5" class="uk-textarea uk-form-width-large" onkeyup="countChars(this);"></textarea>
+            <p id="charNum">255 characters remaining</p>
+        </div>
+    </div>
+    <div class="uk-margin">
+        <button type="submit" class="uk-button uk-button-primary">SUBMIT</button>
+    </div>
+</form>
+{{/if}}
+
+{{#if loggedIn}}
+<script src="/javascript/comment.js"></script>
+{{/if}}

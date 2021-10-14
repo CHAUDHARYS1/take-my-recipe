@@ -45,6 +45,10 @@
   overflow: hidden;
   text-overflow: ellipsis;
   }
+  .food-title{
+    max-width: 220px;
+    white-space:pre-wrap;
+  }
 
   #add-recipe span{
     transition:.5s;
@@ -56,6 +60,35 @@
     -webkit-transform:rotate(90deg);
     transform:rotate(90deg);
   }
+
+  #togglePassword {
+    position: absolute;
+    margin-top: 7px;
+    margin-left:80px;
+    cursor: pointer;
+}
+
+.initials{
+  width: 15px;
+  height: 40px;
+  background: white;
+  border-radius: 50%;
+  color: red;
+  margin-left: 30px!important;
+}
+.initials span{
+  font-size: 24px;
+  position: absolute!important;
+  margin-left:-21px;
+
+}
+#myVideo{
+  width: 100%;
+  height: 300px;
+  background-size: cover;
+  background-position: bottom;
+  background-image: url('/images/cooking-mp4.mp4');
+} 
   footer{
     margin-top: 100px;
   }

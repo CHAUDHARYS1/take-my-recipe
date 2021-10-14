@@ -7,7 +7,7 @@ async function newFormHandler(event) {
     const instructions = document.getElementById('instructions').value;
     const imageUrl = document.getElementById('image_link').value; 
     const ingredients = document.getElementById('ingredients').value;
-  
+
 
     const response = await fetch(`/api/`, {
       method: 'POST',
@@ -26,7 +26,8 @@ async function newFormHandler(event) {
     });
 
     if (response.ok) {
-        document.location.replace('/');
+      console.log(response)
+      document.location.replace('/dashboard');
     } else {
       alert(response.statusText);
     }
