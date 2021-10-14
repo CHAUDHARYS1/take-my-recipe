@@ -38,7 +38,7 @@
 </div>
  {{#if loggedIn}}
   <a href="/editMyRecipe/{{recipe.id}}" class="uk-button uk-button-primary" id="edit-recipe" uk-icon="file-edit" ratio:1.5 uk-tooltip="title: edit; pos: bottom"></a>
-    <a class="uk-button uk-button-primary uk-button-medium" href="/deleteRecipe/{{recipe.id}}" uk-icon="trash" ratio:1.5
+    <a href="/deleteRecipe/{{recipe.id}}" class="uk-button uk-button-primary uk-button-medium" id="delete-btn" uk-icon="trash" ratio:1.5
                     uk-tooltip="title: delete; pos: bottom"></a>
  {{/if}}
 
@@ -79,4 +79,5 @@
 
 {{#if loggedIn}}
 <script src="/javascript/comment.js"></script>
+<script src="/javascript/delete-recipe.js"></script>
 {{/if}}
