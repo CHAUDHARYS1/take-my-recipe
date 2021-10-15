@@ -15,7 +15,8 @@ Comment.belongsTo(User, {
 });
 
 Comment.belongsTo(Recipe, {
-	foreignKey : 'recipe_id'
+	foreignKey : 'recipe_id',
+	onDelete: 'cascade'
 });
 
 User.hasMany(Comment, {
@@ -23,7 +24,8 @@ User.hasMany(Comment, {
 });
 
 Recipe.hasMany(Comment, {
-	foreignKey : 'recipe_id'
+	foreignKey : 'recipe_id',
+	onDelete: 'cascade'
 });
 
 module.exports = { User, Recipe, Comment};
