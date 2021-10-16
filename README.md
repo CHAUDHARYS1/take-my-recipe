@@ -149,5 +149,5 @@ Project Link: [https://github.com/schaudhary1/take-my-recipe](https://github.com
 ## Acknowledgements
 
 - [Jaya Gudipalli](https://github.com/jaya1983)
-- [Connor Werth](https://github.com/Connorw2222)
+- [Conner Werth](https://github.com/Connorw2222)
 - [Shital Chaudhary](https://github.com/CHAUDHARYS1)

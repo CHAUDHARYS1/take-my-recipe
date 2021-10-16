@@ -23,25 +23,23 @@ async function signup(event) {
     errorMessage.classList.remove("uk-hidden");
     errorMessage.innerText = "Please enter a email address";
     return false;
-  } else if(password === null || password === ""){
+  } else if (password === null || password === "") {
     errorMessage.classList.remove("uk-hidden");
     errorMessage.innerText = "Please enter a password";
     return false;
-  } else if(confirmPassword === null || confirmPassword === ""){
+  } else if (confirmPassword === null || confirmPassword === "") {
     errorMessage.classList.remove("uk-hidden");
     errorMessage.innerText = "Please enter confirm password";
     return false;
-  } else if(password !== confirmPassword){
+  } else if (password !== confirmPassword) {
     errorMessage.classList.remove("uk-hidden");
     errorMessage.innerText = "Password does not match";
     return false;
-  }
-      else if (email.match(!validRegex)) {
-        errorMessage.classList.add("uk-hidden");
-        errorMessage.innerText = "Please enter a correct email address";
-        return false;
-      }
-   else {
+  } else if (email.match(!validRegex)) {
+    errorMessage.classList.add("uk-hidden");
+    errorMessage.innerText = "Please enter a correct email address";
+    return false;
+  } else {
 
   }
   fetch("/api/users/", {
