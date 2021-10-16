@@ -3,9 +3,7 @@
         <h2>Add Your Recipe Below</h2>
         <p>Add your recipe for others to try out!</p>
 
-        <form class="add-recipe-form uk-form-width-large">
-            <!-- Error  -->
-        <div class="uk-margin uk-flex uk-flex-left"><span class="uk-label uk-label-danger uk-hidden" id="error"></span></div>
+        <form class="add-recipe-form">
             <!-- Recipe Name -->
             <div class="uk-margin">
                 <label class="uk-form-label">Recipe Name:</label>
@@ -16,7 +14,7 @@
                 <label class="uk-form-label">Meal Type</label>
                 <div class="uk-form-controls">
                     <select class="uk-select" id="form-stacked-select">
-                        <option value="Select">Select</option>
+                        <option>Select</option>
                         <option value="Breakfast">Breakfast</option>
                         <option value="Lunch">Lunch</option>
                         <option value="Dinner">Dinner</option>
@@ -46,8 +44,7 @@
             </div>
 
             <!-- Upload a picture -->
-            <!-- Commented out until feature has been added -->
-            {{!-- <div class="uk-margin">
+            <div class="uk-margin">
                 <div class="js-upload uk-placeholder uk-text-center">
                     <span uk-icon="icon: cloud-upload"></span>
                     <span class="uk-text-middle">Attach a image by dropping them here or</span>
@@ -56,18 +53,15 @@
                         <span id="upload-pic" class="uk-link">selecting one</span>
                     </div>
                 </div>
-            </div> --}}
-
-            <!-- Image link -->
-            <div class="uk-margin">
-                <label for="image_link">Image link</label><label for="source">
-                <input type="text" id="image_link" class="form-control uk-input" placeholder="A url to your image">
-                <a href="https://www.scrambledchefs.com" target="_blank">Find an image</a></label>
             </div>
-
+            <div class="uk-margin">
+                <div class="uk-form-custom">
+                    <label for="image_link">Image link</label>
+                    <input type="text" id="image_link" class="form-control" placeholder="A url to your image">
+                </div>
+            </div>
             <progress id="js-progressbar" class="uk-progress" value="0" max="100" hidden></progress>
-            
-            <!-- Submit Button -->
+
             <div class="uk-margin uk-flex uk-flex-center">
                 <button id="submit-btn" class="uk-button uk-button-default" type="submit">Submit</button>
             </div>

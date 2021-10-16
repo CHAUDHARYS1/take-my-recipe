@@ -7,7 +7,6 @@
     <title>Take My Receipe</title>
     <link rel="stylesheet" href="/stylesheets/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.7.1/dist/css/uikit.min.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
 
 </head>
 
@@ -27,9 +26,9 @@
             <!-- Login/Signup page -->
             <div class="uk-padding-small">
                 {{#if loggedIn}}
-                <a id="logout">
-                    <button class="category-buttons uk-button uk-button-danger">Logout</button>
-                </a>
+                 <a id="logout">
+                 <button class="category-buttons uk-button uk-button-danger">Logout</button>
+                 </a>
                 {{else}}
                 <a class="uk-button uk-button-default uk-button-small" href="/login" uk-icon="sign-in"
                     uk-tooltip="title: Login; pos: bottom"></a>
@@ -40,8 +39,11 @@
             </div>
         </div>
     </nav>
-    <!-- Video -->
-
+    {{!-- <div class="uk-cover-container uk-height-medium">
+        <p class="uk-h4">Cover</p>
+        <img src="https://image.freepik.com/free-photo/chicken-wings-barbecue-sweetly-sour-sauce-picnic-summer-menu-tasty-food-top-view-flat-lay_2829-6471.jpg"
+            alt="" uk-cover>
+    </div> --}}
     <main class="uk-container" id="toTop">
         {{{ body }}}
     </main>
