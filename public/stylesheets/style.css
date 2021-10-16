@@ -40,13 +40,13 @@
   }
 
   .food-description{
-    max-width: 220px;
+    max-width: 220px!important;
     white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   }
   .food-title{
-    max-width: 220px;
+    max-width: 220px!important;
     white-space:pre-wrap;
   }
 

@@ -4,22 +4,22 @@ async function loginFormHandler(event) {
   const email = document.querySelector('#email').value.trim();
   const password = document.querySelector('#password').value.trim();
   const errorMessage = document.querySelector('#error');
-  const validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+  // const validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 
 
-  if(email.match(validRegex)){
+  // if(email.match(validRegex)){
   
-  }else{
-    errorMessage.classList.remove("uk-hidden");
-    errorMessage.innerText = "Please enter a correct email";
-    return false;
-  }
-  if(password === !null){
-    return true;
-  } else{
-    errorMessage.classList.remove("uk-hidden");
-    errorMessage.innerText = "Please enter a password";
-  }
+  // }else{
+  //   errorMessage.classList.remove("uk-hidden");
+  //   errorMessage.innerText = "Please enter a correct email";
+  //   return false;
+  // }
+  // if(password === !null){
+  //   return true;
+  // } else{
+  //   errorMessage.classList.remove("uk-hidden");
+  //   errorMessage.innerText = "Please enter a password";
+  // }
 
   if (email && password) {
     const response = await fetch('/api/users/login', {

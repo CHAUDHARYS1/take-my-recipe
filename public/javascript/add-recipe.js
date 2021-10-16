@@ -1,14 +1,4 @@
 async function newFormHandler(event) {
-<<<<<<< HEAD
-    event.preventDefault();
-    const title = document.getElementById('recipe-name').value;
-    const category = document.getElementById('form-stacked-select').value;
-    const description = document.getElementById('description').value;
-    const instructions = document.getElementById('instructions').value;
-    const imageUrl = document.getElementById('image_link').value; 
-    const ingredients = document.getElementById('ingredients').value;
-
-=======
   event.preventDefault();
   const title = document.getElementById('recipe-name').value;
   const category = document.getElementById('form-stacked-select').value;
@@ -17,7 +7,6 @@ async function newFormHandler(event) {
   const imageUrl = document.getElementById('image_link').value;
   const ingredients = document.getElementById('ingredients').value;
   const errorMessage = document.querySelector('#error');
->>>>>>> develop
 
   if (title === !null) {
 
@@ -47,15 +36,6 @@ async function newFormHandler(event) {
     return false;
   } else {
 
-<<<<<<< HEAD
-    if (response.ok) {
-      console.log(response)
-      document.location.replace('/dashboard');
-    } else {
-      alert(response.statusText);
-    }
-=======
->>>>>>> develop
   }
 
   const response = await fetch(`/api/`, {
