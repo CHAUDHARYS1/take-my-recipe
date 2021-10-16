@@ -11,7 +11,7 @@
     "express-handlebars": "^5.3.4",
     "express-session": "^1.17.2",
     "mysql2": "^2.3.0",
-    "nodemon": "^2.0.12",
+    "nodemon": "^2.0.13",
     "seed": "^0.4.4",
     "sequelize": "^6.6.5"
   },
@@ -19,7 +19,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
-    "seeds": "node seeds/index.js"
+    "seeds": "node seeds/index.js",
+    "nodemon": "nodemon"
   },
   "repository": {
     "type": "git",
