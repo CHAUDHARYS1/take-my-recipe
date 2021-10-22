@@ -81,9 +81,7 @@ router.get("/singleRecipe/:id", (req, res) => {
         comment.nickname =
           comment.user.first_name[0].toUpperCase() +
           comment.user.last_name[0].toUpperCase();
-        // console.log(comment);
       });
-      // console.log(recipe.comments[0])
       res.render("singleRecipe", {
         recipe,
         loggedIn: req.session.loggedIn,
@@ -96,7 +94,6 @@ router.get("/singleRecipe/:id", (req, res) => {
 });
 
 router.get("/category/:category", (req, res) => {
-  // console.log(req.params.category)
   Recipe.findAll({
     where: {
       category: req.params.category,
@@ -125,11 +122,13 @@ router.get("/category/:category", (req, res) => {
 
 // add a recipe route
 router.get("/addRecipe", (req, res) => {
-  if (!req.session.loggedIn) {
+  if (req.session.loggedIn) {
+    res.render("createRecipe", {loggedIn: true });
+  }
+  else {
     res.redirect("/login");
     return;
   }
-  res.render("createRecipe");
 });
 
 // when clicking on edit post, will be redirected to this page
