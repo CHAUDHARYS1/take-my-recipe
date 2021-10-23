@@ -1,50 +1,63 @@
 <div class="uk-child-width-expand@s" uk-grid>
   <div>
     <div class="uk-card uk-card-default uk-card-body">
-      <h4 class="uk-margin-remove-bottom">Recipe Title:</h4>
+      <h4 class="uk-margin-remove-bottom">Recipe Title</h4>
       <!--    <h3 class="uk-heading-small uk-margin-remove-top">{{recipe.title}}</h3> -->
       <div class="uk-margin">
         <input class="uk-input" id="recipe-title" type="text" placeholder="" />
       </div>
       <!-- Description -->
-      <h5 class="uk-margin-remove-bottom">Description:</h5>
+      <h5 class="uk-margin-remove-bottom">Description</h5>
       <div class="uk-margin">
         <input class="uk-input" id="description" type="text" placeholder="" />
       </div>
 
-         <!-- Meal Type Drop Down -->
-            <div class="uk-margin">
-                <label class="uk-form-label">category</label>
-                <div class="uk-form-controls">
-                    <select class="uk-select" id="form-stacked-select">
-                        <option>Select</option>
-                        <option value="Breakfast">Breakfast</option>
-                        <option value="Lunch">Lunch</option>
-                        <option value="Dinner">Dinner</option>
-                        <option value="Appetizer">Appetizers</option>
-                    </select>
-                </div>
-            </div>
+      <!-- Meal Type Drop Down -->
+      <div class="uk-margin">
+        <h5 class="uk-margin-remove-bottom">Category</h5>
+        <div class="uk-form-controls">
+          <select class="uk-select" id="form-stacked-select">
+            <option>Select</option>
+            <option value="Breakfast">Breakfast</option>
+            <option value="Lunch">Lunch</option>
+            <option value="Dinner">Dinner</option>
+            <option value="Appetizer">Appetizers</option>
+          </select>
+        </div>
+      </div>
 
       <!-- Ingredients -->
-      <h5 class="uk-margin-remove-bottom">Ingredients:</h5>
+      <h5 class="uk-margin-remove-bottom">Ingredients</h5>
       <div class="uk-margin">
-        <textarea name="ingredients" id="ingredients" class="uk-textarea" rows="5"
-                    placeholder="Please add list of ingredients on your recipe"></textarea>
+        <textarea
+          name="ingredients"
+          id="ingredients"
+          class="uk-textarea"
+          rows="5"
+          placeholder="Please add list of ingredients on your recipe"
+        ></textarea>
       </div>
       <!-- Instructions -->
-      <h5 class="uk-margin-remove-bottom">Instructions:</h5>
+      <h5 class="uk-margin-remove-bottom">Instructions</h5>
       <div class="uk-margin">
-        <textarea id="instructions" class="uk-textarea" rows="5"
-                    placeholder="please add a brief recipe instructions of your recipe"></textarea>
+        <textarea
+          id="instructions"
+          class="uk-textarea"
+          rows="5"
+          placeholder="please add a brief recipe instructions of your recipe"
+        ></textarea>
       </div>
 
-        <!-- Image link -->
-         <h5 class="uk-margin-remove-bottom">Image Link:</h5>
-            <div class="uk-margin">
-                <label for="image_link">Image link</label>
-                <input type="text" id="image_link" class="form-control uk-input" placeholder="A url to your image">
-            </div>
+      <!-- Image link -->
+      <h5 class="uk-margin-remove-bottom">Image Link</h5>
+      <div class="uk-margin">
+        <input
+          type="text"
+          id="image_link"
+          class="form-control uk-input"
+          placeholder="A url to your image"
+        />
+      </div>
       <!-- Submit Button -->
       <div class="uk-margin uk-flex uk-flex-center">
         <button
