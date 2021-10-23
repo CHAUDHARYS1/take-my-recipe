@@ -51,8 +51,13 @@ router.get("/singleRecipe/:id", (req, res) => {
       "description",
       "instructions",
       "ingredients",
+       "user_id"
     ],
     include: [
+      // {
+      //   model: User,
+      //   attributes: ["first_name", "last_name"],
+      // },
       {
         model: Comment,
         attributes: [
@@ -72,20 +77,27 @@ router.get("/singleRecipe/:id", (req, res) => {
     ],
   })
     .then((dbPostData) => {
+      console.log("single recipe dbpost data" , dbPostData);
       if (!dbPostData) {
         res.status(404).json({ message: "No post found with this id" });
         return;
       }
       const recipe = dbPostData.get({ plain: true });
+      console.log("single recipe details", recipe);
       recipe.comments.map((comment) => {
         comment.nickname =
           comment.user.first_name[0].toUpperCase() +
           comment.user.last_name[0].toUpperCase();
       });
+      var myUser = false;
+      if(recipe.user_id == req.session.user_id) {
+        myUser = true;
+      }      
       res.render("singleRecipe", {
         recipe,
         loggedIn: req.session.loggedIn,
-      });
+        myUser
+      });    
     })
     .catch((err) => {
       console.log(err);

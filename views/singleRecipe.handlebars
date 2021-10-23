@@ -38,7 +38,7 @@
 </div>
 
 <div class="uk-margin">
- {{#if loggedIn}}
+ {{#if myUser}}
   <a href="/editMyRecipe/{{recipe.id}}" class="uk-button uk-button-primary" id="edit-recipe" uk-icon="file-edit" ratio:1.5 uk-tooltip="title: edit; pos: bottom"></a>
     <a href="/deleteRecipe/{{recipe.id}}" class="uk-button uk-button-primary uk-button-medium" id="delete-btn" uk-icon="trash" ratio:1.5
                     uk-tooltip="title: delete; pos: bottom"></a>
