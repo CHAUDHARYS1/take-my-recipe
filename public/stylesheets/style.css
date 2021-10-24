@@ -3,8 +3,9 @@
     margin: 0;
     scroll-behavior: smooth;
   }
-  body {
-    background-color: seashell;
+
+  html{
+    background-color: seashell!important;
   }
    ul, ol, li, p, a, input, label, textarea, select, option, button{
     font-size:12px!important;
