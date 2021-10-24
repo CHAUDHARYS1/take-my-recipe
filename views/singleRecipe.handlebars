@@ -6,13 +6,15 @@
     </ul>
 </div>
 
-<div class="uk-margin uk-padding-small">
+{{#if loggedIn}}
  {{#if myUser}}
+<div class="uk-margin uk-padding-small">
   <a href="/editMyRecipe/{{recipe.id}}" class="uk-button uk-button-primary" id="edit-recipe" uk-icon="file-edit" ratio:1.5 uk-tooltip="title: edit; pos: bottom"></a>
     <a href="/deleteRecipe/{{recipe.id}}" class="uk-button uk-button-primary uk-button-medium" id="delete-btn" uk-icon="trash" ratio:1.5
                     uk-tooltip="title: delete; pos: bottom"></a>
- {{/if}}
 </div>
+ {{/if}}
+{{/if}}
 
 <div class="uk-child-width-expand@s" uk-grid>
     <div>
