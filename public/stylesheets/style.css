@@ -2,9 +2,11 @@
     padding: 0;
     margin: 0;
     scroll-behavior: smooth;
-
   }
-  ul, ol, li, p, a, input, label, textarea, select, option, button{
+  body {
+    background-color: seashell;
+  }
+   ul, ol, li, p, a, input, label, textarea, select, option, button{
     font-size:12px!important;
   }
   .uk-logo:hover{
@@ -24,7 +26,6 @@
   .category-buttons{
     border-radius: 20px!important;
   }
-  
   .food-img{
     height: 300px;
     width: 300px;

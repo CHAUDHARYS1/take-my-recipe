@@ -1,14 +1,10 @@
 <!-- Video Component -->
-{{#if loggedIn}}
-    {{else}}
-    <div class="uk-cover-container uk-margin-bottom" >
-        <video autoplay muted loop id="myVideo" class="uk-background-blend-darken">
-            {{!--
-            <source src="/images/cooking-wok.mp4" type="video/mp4"> --}}
-            Your browser does not support HTML5 video.
+    <div class="uk-cover-container uk-margin-bottom">
+        <video autoplay muted loop> 
+              <source src="/images/cooking-mp4.mp4" type="video/mp4"  class="my-video">
+                   Your browser does not support HTML5 video.
         </video>
     </div>
-    {{/if}}
 
 <!-- Breadcrumb -->
 <div>
@@ -43,7 +39,8 @@
 </div>
 {{else}}
 <div class="add-recipe-container">
-    <a href="/addRecipe" class="uk-button uk-button-primary" id="add-recipe" uk-tooltip="Login or Register to add your own recipe">Login/Register</a>
+    <a href="/addRecipe" class="uk-button uk-button-primary" id="add-recipe"
+        uk-tooltip="Login or Register to add your own recipe">Login/Register</a>
 </div>
 {{/if}}
 
