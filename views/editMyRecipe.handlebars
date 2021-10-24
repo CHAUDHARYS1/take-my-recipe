@@ -2,14 +2,13 @@
   <div>
     <div class="uk-card uk-card-default uk-card-body">
       <h4 class="uk-margin-remove-bottom">Recipe Title</h4>
-      <!--    <h3 class="uk-heading-small uk-margin-remove-top">{{recipe.title}}</h3> -->
-      <div class="uk-margin">
-        <input class="uk-input" id="recipe-title" type="text" placeholder="" />
+          <div class="uk-margin">
+        <input class="uk-input" id="recipe-title" type="text" placeholder="" value="{{recipe.title}}"></input>
       </div>
       <!-- Description -->
       <h5 class="uk-margin-remove-bottom">Description</h5>
       <div class="uk-margin">
-        <input class="uk-input" id="description" type="text" placeholder="" />
+        <input class="uk-input" id="description" type="text" placeholder="" value="{{recipe.description}}">
       </div>
 
       <!-- Meal Type Drop Down -->
@@ -17,7 +16,7 @@
         <h5 class="uk-margin-remove-bottom">Category</h5>
         <div class="uk-form-controls">
           <select class="uk-select" id="form-stacked-select">
-            <option>Select</option>
+            <option>{{recipe.category}}</option>
             <option value="Breakfast">Breakfast</option>
             <option value="Lunch">Lunch</option>
             <option value="Dinner">Dinner</option>
@@ -34,8 +33,8 @@
           id="ingredients"
           class="uk-textarea"
           rows="5"
-          placeholder="Please add list of ingredients on your recipe"
-        ></textarea>
+          placeholder=""          
+        >{{recipe.ingredients}}</textarea>
       </div>
       <!-- Instructions -->
       <h5 class="uk-margin-remove-bottom">Instructions</h5>
@@ -44,8 +43,8 @@
           id="instructions"
           class="uk-textarea"
           rows="5"
-          placeholder="please add a brief recipe instructions of your recipe"
-        ></textarea>
+          placeholder=""          
+        >{{recipe.instructions}}</textarea>
       </div>
 
       <!-- Image link -->
@@ -56,6 +55,7 @@
           id="image_link"
           class="form-control uk-input"
           placeholder="A url to your image"
+          value="{{recipe.imageUrl}}"
         />
       </div>
       <!-- Submit Button -->
