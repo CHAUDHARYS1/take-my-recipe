@@ -25,7 +25,6 @@ async function commentFormHandler(event) {
             UIkit.modal.alert('Your comment is over the maximum character allowed.').then(function () {
                 console.log('Alert closed.')
             });        
-            // alert(response.statusText);
         }
     }
 }

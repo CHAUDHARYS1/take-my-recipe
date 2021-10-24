@@ -37,7 +37,7 @@ router.get("/", (req, res) => {
     });
 });
 
-// get single recipe
+// Get single recipe
 router.get("/singleRecipe/:id", (req, res) => {
   Recipe.findOne({
     where: {
@@ -51,13 +51,9 @@ router.get("/singleRecipe/:id", (req, res) => {
       "description",
       "instructions",
       "ingredients",
-       "user_id"
+      "user_id",
     ],
     include: [
-      // {
-      //   model: User,
-      //   attributes: ["first_name", "last_name"],
-      // },
       {
         model: Comment,
         attributes: [
@@ -77,27 +73,26 @@ router.get("/singleRecipe/:id", (req, res) => {
     ],
   })
     .then((dbPostData) => {
-      console.log("single recipe dbpost data" , dbPostData);
       if (!dbPostData) {
         res.status(404).json({ message: "No post found with this id" });
         return;
       }
       const recipe = dbPostData.get({ plain: true });
-      console.log("single recipe details", recipe);
+
       recipe.comments.map((comment) => {
         comment.nickname =
           comment.user.first_name[0].toUpperCase() +
           comment.user.last_name[0].toUpperCase();
       });
       var myUser = false;
-      if(recipe.user_id == req.session.user_id) {
+      if (recipe.user_id == req.session.user_id) {
         myUser = true;
-      }      
+      }
       res.render("singleRecipe", {
         recipe,
         loggedIn: req.session.loggedIn,
-        myUser
-      });    
+        myUser,
+      });
     })
     .catch((err) => {
       console.log(err);
@@ -105,6 +100,7 @@ router.get("/singleRecipe/:id", (req, res) => {
     });
 });
 
+/* Get Recipe by Category */
 router.get("/category/:category", (req, res) => {
   Recipe.findAll({
     where: {
@@ -132,18 +128,17 @@ router.get("/category/:category", (req, res) => {
     });
 });
 
-// add a recipe route
+// Create a Recipe
 router.get("/addRecipe", (req, res) => {
   if (req.session.loggedIn) {
-    res.render("createRecipe", {loggedIn: true });
-  }
-  else {
+    res.render("createRecipe", { loggedIn: true });
+  } else {
     res.redirect("/login");
     return;
   }
 });
 
-// when clicking on edit post, will be redirected to this page
+// Edit My Recipe page
 router.get("/editMyRecipe/:id", withAuth, (req, res) => {
   Recipe.findByPk(req.params.id, {
     attributes: [
@@ -176,7 +171,7 @@ router.get("/editMyRecipe/:id", withAuth, (req, res) => {
     });
 });
 
-//login / signup page
+//login Page
 router.get("/login", (req, res) => {
   if (req.session.loggedIn) {
     res.redirect("/");
@@ -185,12 +180,12 @@ router.get("/login", (req, res) => {
   res.render("login");
 });
 
+// signup page
 router.get("/signup", (req, res) => {
   if (req.session.loggedIn) {
     res.redirect("/");
     return;
   }
-
   res.render("signup");
 });
 

@@ -23,9 +23,8 @@ router.get("/", (req, res) => {
     });
 });
 
-//get one recipe
+//get single recipe
 router.get("/getRecipe/:id", (req, res) => {
-
   Recipe.findOne({
     where: {
       id: req.params.id,
@@ -40,7 +39,6 @@ router.get("/getRecipe/:id", (req, res) => {
     ],
   })
     .then((singleReceipe) => {
-
       if (!singleReceipe) {
         res.status(404).json({ message: "No post found with this id" });
         return;
@@ -53,7 +51,7 @@ router.get("/getRecipe/:id", (req, res) => {
     });
 });
 
-// get all recipes by category
+// get recipes by category
 router.get("/:category", (req, res) => {
   Recipe.findAll({
     where: {
@@ -75,8 +73,8 @@ router.get("/:category", (req, res) => {
     });
 });
 
+/* Create Recipes */
 router.post("/", withAuth, (req, res) => {
-
   Recipe.create({
     title: req.body.title,
     ingredients: req.body.ingredients,
@@ -96,6 +94,7 @@ router.post("/", withAuth, (req, res) => {
     });
 });
 
+/* Update a Recipe by User_id*/
 router.put("/update/:id", withAuth, (req, res) => {
   Recipe.update(req.body, {
     where: {
@@ -115,7 +114,7 @@ router.put("/update/:id", withAuth, (req, res) => {
     });
 });
 
-// delete by user_id
+// delete a recipe by user_id
 router.delete("/:id", withAuth, (req, res) => {
   Recipe.destroy({
     where: {
