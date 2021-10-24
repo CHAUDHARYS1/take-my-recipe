@@ -149,6 +149,7 @@ router.get("/editMyRecipe/:id", withAuth, (req, res) => {
     attributes: [
       "id",
       "title",
+      "description",
       "ingredients",
       "instructions",
       "category",
