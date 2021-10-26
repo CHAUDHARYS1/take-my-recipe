@@ -15,15 +15,13 @@
     <a href="https://github.com/schaudhary1/take-my-recipe"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/schaudhary1/take-my-recipe">View Demo</a>
+    <a href="https://take-my-recipe.herokuapp.com">View Demo</a>
     ·
     <a href="https://github.com/schaudhary1/take-my-recipe/issues">Report Bug</a>
     ·
     <a href="https://github.com/schaudhary1/take-my-recipe/issues">Request Feature</a>
   </p>
 </p>
-
-
 <!-- TABLE OF CONTENTS -->
 <details open="open">
   <summary><h2 style="display: inline-block">Table of Contents</h2></summary>
@@ -53,6 +51,7 @@
 ## About The Project
 
 Take My Recipe is an web application built entirely from JavaScript which has a couple of cool features. It's main purpose is to allow users to add recipe for others users to see and try it out. User have the ability to add their own recipe or... try someone elses. User will also have the ability to comment on the recipes of their choosing. 
+
 
 ![homepage](https://user-images.githubusercontent.com/39867916/135366591-7117c3e2-85a2-4240-b582-c23c49632db1.png)
 
