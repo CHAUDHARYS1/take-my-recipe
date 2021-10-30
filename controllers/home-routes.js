@@ -29,6 +29,8 @@ router.get("/", (req, res) => {
       res.render("index", {
         recipes,
         loggedIn: req.session.loggedIn,
+        firstname: req.session.firstName,
+        lastname: req.session.lastName
       });
     })
     .catch((err) => {
@@ -91,6 +93,8 @@ router.get("/singleRecipe/:id", (req, res) => {
       res.render("singleRecipe", {
         recipe,
         loggedIn: req.session.loggedIn,
+        firstname: req.session.firstName,
+        lastname: req.session.lastName,
         myUser,
       });
     })
@@ -119,7 +123,9 @@ router.get("/category/:category", (req, res) => {
       res.render("category", {
         recipes,
         category,
-        loggedIn: req.session.loggedIn,
+        loggedIn: req.session.loggedIn,firstname: 
+        req.session.firstName,
+        lastname: req.session.lastName
       });
     })
     .catch((err) => {
@@ -131,7 +137,11 @@ router.get("/category/:category", (req, res) => {
 // Create a Recipe
 router.get("/addRecipe", (req, res) => {
   if (req.session.loggedIn) {
-    res.render("createRecipe", { loggedIn: true });
+    res.render("createRecipe", { 
+      loggedIn: true,        
+      firstname: req.session.firstName,
+      lastname: req.session.lastName
+    });
   } else {
     res.redirect("/login");
     return;
@@ -163,6 +173,8 @@ router.get("/editMyRecipe/:id", withAuth, (req, res) => {
       res.render("editMyRecipe", {
         recipe,
         loggedIn: true,
+        firstname: req.session.firstName,
+        lastname: req.session.lastName
       });
     })
     .catch((err) => {

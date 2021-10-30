@@ -38,7 +38,12 @@ router.get("/", withAuth, (req, res) => {
       const recipes = dbUserRecipeData.map((recipe) =>
         recipe.get({ plain: true })
       );
-      res.render("user-dashboard", { recipes, loggedIn: true });
+      res.render("user-dashboard", { 
+        recipes, 
+        loggedIn: true,
+        firstname: req.session.firstName,
+        lastname: req.session.lastName
+      });
     })
     .catch((err) => {
       console.log(err);

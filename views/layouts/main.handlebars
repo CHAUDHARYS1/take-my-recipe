@@ -19,6 +19,10 @@
                 <img src="/images/logo.png" class="uk-center" alt="Take My Recipe logo"
                     uk-tooltip="title: Go back to the homepage; pos: bottom" />
             </a>
+              {{#if loggedIn}}
+                <span class="">Hi {{ firstname }},</span>
+                {{else}}
+                {{/if}}
         </div>
 
         <!-- Navigation on the right side -->
